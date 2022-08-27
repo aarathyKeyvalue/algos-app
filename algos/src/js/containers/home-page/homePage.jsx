@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-import { Calendar } from "react-modern-calendar-datepicker";
+import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
+import { Calendar } from "@hassanmojab/react-modern-calendar-datepicker";
 import Button from "../../components/button/Button";
 import Input from "../../components/input-field/input";
 import ToggleButton from "../../components/toggle-button/toggleButton";
@@ -36,11 +36,11 @@ const HomePage = (props) => {
           </div>
           <div class="locationsInputsContainer">
             <div class="iconsContainer">
-              <div class="iconContainer">
+              <div class="iconContainerVal">
                 <div class="pickUpIcon" />
               </div>
               <div class="dotted-line" />
-              <div class="iconContainer">
+              <div class="iconContainerVal">
                 <div class="locationPinIcon" />
               </div>
             </div>
