@@ -60,31 +60,48 @@ top: 47px;
     justify-content: flex-start;
     align-items: center;
 }
+.timeWaiting {
+    height: 52px;
+    width: 100%;
+    border: 1px solid #F3F3F3;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.timeSelector {
+    display: flex;
+}
+.clockGray {
+    background: url('../../../assets/main/clockGray.svg');
+    height: 24px;
+    width: 24px;
+    margin-right: 12px;
+}
+.sandClockGray {
+    background: url('../../../assets/main/sandClockGray.svg');
+    height: 24px;
+    width: 24px;
+    margin-right: 12px;
+    margin-left: 40px;
+}
+.clockTime {
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #191D31;
+    margin-right: 32px;
+}
+.dividerLine {
+    border: 1px solid #A7A9B759;
+    height: 36px;
+}
+.Calendar__day.-selected, .Calendar__day.-selectedStart, .Calendar__day.-selectedEnd {
+    background: rgba(19, 59, 183, 0.15) !important;
+    color: black;
+}
 .otherInputs {
     margin-top: 15px;
-}
-.calenderAndButtonWrapper {
-    width: 100%;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.calenderWrapper {
-    width: 100%;
-}
-.Calendar {
-    max-width: 100% !important;
-    width: 100% !important;
-    box-shadow: none;
-}
-.Calendar__day:not(.-blank):not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween):not(.-selected):hover {
-    background: rgba(19, 59, 183, 0.15) !important; 
-}
-.calenderButtonWrapper {
-width: 100%;
-height: 115px;
-display: flex;
-align-items: center;
-justify-content: space-around;
 }

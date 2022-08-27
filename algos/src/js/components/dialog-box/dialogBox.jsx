@@ -3,7 +3,14 @@ import useOutsideClick from '../../utils/custom-hooks';
 import './styles.css';
 
 const DialogBox = (props) => {
-  const { Component, success, setSuccess, height, details } = props
+  const {
+    Component,
+    success,
+    setSuccess,
+    height,
+    details,
+    componentProps
+  } = props
 
   const refVal = useRef();
 
@@ -26,6 +33,7 @@ const DialogBox = (props) => {
           <Component
             success={success}
             details={details}
+            {...componentProps}
           />
         </dialog>
       </div>

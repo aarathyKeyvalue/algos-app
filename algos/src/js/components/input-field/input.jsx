@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './styles.css';
 
 const Input = (props) => {
-	const { placeholder, type, onChange, isRightLogo = false, onFocus } = props;
+	const {
+		placeholder,
+		type,
+		onChange,
+		isRightLogo = false,
+		onFocus,
+		val
+	} = props;
 	const newDate = new Date();
 
-	const formatDate = (date) => {
-		const monthString = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date)?.substring(0, 3);
-		let newDateString = `${date?.getDay()}/${monthString}/${date.getFullYear()} `;
-		return newDateString;
+	useEffect(() => {
+		setValue(val);
+	}, [val]);
 
-	};
-	const [value, setValue] = useState(type === 'date' ? formatDate(newDate) : '');
+	const [value, setValue] = useState(val);
 	const onValueChange = (e) => {
-		if (type !== 'date') setValue(e.target.value);
+		// if (type !== 'date') setValue(e.target.value);
 		onChange(e.target.value, type);
 	};
 	const getInputType = () => {
@@ -36,7 +41,7 @@ const Input = (props) => {
 			<input
 				class="input"
 				placeholder={placeholder}
-				value={value}
+				value={val}
 				onChange={onValueChange}
 				type={getInputType()}
         onFocus={onFocus}
