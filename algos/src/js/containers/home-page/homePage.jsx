@@ -35,15 +35,8 @@ const HomePage = (props) => {
   const originRef = useRef()
   const destiantionRef = useRef()
 
-  useEffect(() => {
-    setDetails({ ...details, startPoint: originRef.current })
-  }, [originRef.current])
-
-  useEffect(() => {
-    setDetails({ ...details, destinationPoint: destiantionRef.current })
-  }, [destiantionRef.current])
-
   const calculateRoute = async () => {
+    setDetails({ ...details, startPoint: originRef.current?.value, destinationPoint: destiantionRef.current?.value});
     if (originRef.current?.value === '' || destiantionRef.current?.value === '') {
       return
     }
@@ -54,7 +47,7 @@ const HomePage = (props) => {
       destination: destiantionRef.current.value,
       // eslint-disable-next-line no-undef
       travelMode: google.maps.TravelMode.DRIVING,
-    })
+    });
     setDirectionsResponse(results)
   }
 
@@ -116,6 +109,7 @@ const HomePage = (props) => {
                 val={originRef?.current?.value}
                 onChange={(startPoint) => setDetails({ ...details, startPoint })}
                 valueRef={originRef}
+                onBlur={calculateRoute}
               />
               </Autocomplete>
               <Autocomplete>
