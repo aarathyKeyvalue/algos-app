@@ -44,3 +44,16 @@
     color: #191D31;
     border: 1px solid #191D31;
 }
+.outline-secondary {
+    justify-content: center;
+    background:#FFFFFF;
+    border-radius: 30px;
+    height: 56px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20.8px;
+    color: #191D31;
+    border: 1px solid #A7A9B7;
+}

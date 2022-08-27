@@ -63,3 +63,25 @@ top: 47px;
 .otherInputs {
     margin-top: 15px;
 }
+.calenderAndButtonWrapper {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.calenderWrapper {
+    width: 100%;
+}
+.Calendar {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-shadow: none;
+}
+.calenderButtonWrapper {
+width: 100%;
+height: 115px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
