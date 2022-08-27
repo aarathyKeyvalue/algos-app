@@ -91,9 +91,9 @@ const VerificationCode = (props) => {
       <div className={`registrationSuccess`}>
         {success && (
         <>
-          <div className={`overlay ${success && 'showRegistrationSuccess'}`} />
+          <div className={`overlay`} />
           <div className="dialogWrapper">
-            <dialog className="dialog" open={success}>
+            <dialog className={`dialog showRegistrationSuccess`} open={success}>
             <RegistrationSuccess success={success}/>
             </dialog>
           </div>

@@ -12,6 +12,7 @@
 }
 .verificationWrapper {
     position: relative;
+    padding: 0 24px;
 }
 .verification {
     font-family: Avenir;
@@ -94,11 +95,10 @@
     position: absolute;
     z-index: 11;
     background-color: #fff;
-    left: 0%;
+    left: 24px;
     right: 0%;
     bottom: 0%;
     height: 459px;
-    overflow: hidden;
 }
 
 .dialog {
