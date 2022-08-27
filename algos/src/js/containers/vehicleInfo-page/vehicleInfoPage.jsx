@@ -23,10 +23,7 @@ const vehicleInfoPage = () => {
       <div className="infovehicle1">
       <img src={img2} />
       </div>
-      {/* <Button  
-      type="fill"
-      label="Continue"
-      width="100%"/> */}
+
     </div>
   );
 };
