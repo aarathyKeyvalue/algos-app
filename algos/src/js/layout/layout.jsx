@@ -6,7 +6,7 @@ import {
   HashRouter as Router  } from 'react-router-dom';
 import MainContainer from '../containers/login-container/loginContainer';
 import VerificationCode from '../containers/verification-code';
-import ListingPage from '../containers/listing-page';
+import HomePage from '../containers/home-page';
 import './styles.css';
 
 const Layout = (props) => {
@@ -27,7 +27,7 @@ const Layout = (props) => {
             <Route path="/" exact={true} element={<Navigate to ="/login" />}/>
             <Route path="/login" exact={true} element={<MainContainer />} /> 
             <Route path="/verification" exact={true} element={<VerificationCode />} />
-            <Route path="/home" exact={true} element={<ListingPage />} />
+            <Route path="/home" exact={true} element={<HomePage />} />
           </Switch>
         </Router>
       </div>

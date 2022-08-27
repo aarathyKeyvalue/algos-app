@@ -1,0 +1,61 @@
+.homepageWrapper {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.mapContainer {
+    height: 35%;
+    background-color: grey;
+}
+.homeFormContainer {
+    padding: 20px 24px 0;
+}
+.toggleButtonWrapper {
+    width: 100%;
+}
+.locationsInputsContainer {
+    width: 100%;
+    display: flex;
+    margin-top: 18px;
+}
+.iconsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    position: relative;
+}
+.pickUpIcon {
+    width: 24px;
+    height: 24px;
+    background-image: url('../../../assets/main/dot-and-circle.svg');
+}
+.locationPinIcon {
+    width: 24px;
+    height: 24px;
+    background-image: url('../../../assets/main/location-pin.svg');
+}
+.dotted-line {
+position: absolute;
+height: 30px;
+width: 0px;
+border-right: 1px dotted #A7A9B7;
+border-left: 1px dotted #A7A9B7;
+left: 17px;
+top: 47px;
+}
+.locationInputsWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    width: 100%;
+}
+.locationInputWrapper {
+    height: 52px;
+}
+.iconContainer {
+    height: 54px;
+    width: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

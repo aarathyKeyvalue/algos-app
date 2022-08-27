@@ -10,17 +10,20 @@ const onValueChange= (e) => {
 };
 
 return (
-    <div className="inputWrapper">
+    <div className={`inputWrapper  ${isRightLogo && 'rightLogoInputWrapper'}`}>
 			{!isRightLogo && type &&  (
-				<div class={`iconWrapper ${type}`} />
+				<div class={`iconWrapper ${type} leftLogo`} />
 			)}
 			<input
 				class="input"
 				placeholder={placeholder}
 				value={value}
 				onChange={onValueChange}
-				type={((type === 'number' || type == 'password') && type) || 'text'}
+				type={((type === 'number' || type === 'password') && type) || 'text'}
 			/>
+				{isRightLogo && type &&  (
+				<div class={`iconWrapper ${type} rightLogo`} />
+			)}
     </div>
 );
 };

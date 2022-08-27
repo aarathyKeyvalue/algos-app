@@ -6,41 +6,44 @@ import container from "../../../assets/main/container.svg";
 import "./styles.css";
 const Vehicleselection=()=>{
 return(
-<div>
+<div className="row">
+
     <div className="backgroundclass">
-    <div className='hyva'>
+    <div className='lcvtruck'>
     </div>
     <div className="namediv">
-    Hyva
+    LCV
     </div>
     </div>
 
     <div className="backgroundclass">
-    <div className='container'>
+    <div className='truckvan'>
     </div>
     <div className="namediv">
-    Hyva
+    Truck
     </div>
     </div>
     <div className="backgroundclass">
-    <div className='lcv'>
+    <div className='hyvatruck'>
     </div>
     <div className="namediv">
     Hyva
+    </div>
+    </div>
+    
+    
+    <div className="backgroundclass">
+    <div className='loadtruck'>
+    </div>
+    <div className="namediv">
+    Container
     </div>
     </div>
     <div className="backgroundclass">
     <div className='trailer'>
     </div>
     <div className="namediv">
-    Hyva
-    </div>
-    </div>
-    <div className="backgroundclass">
-    <div className='truck'>
-    </div>
-    <div className="namediv">
-    Hyva
+    Trailer
     </div>
     </div>
 

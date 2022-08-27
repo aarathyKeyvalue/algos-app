@@ -1,43 +1,72 @@
-.hyva{
+.hyvatruck{
     background: url("../../../assets/vehicles/hyva.svg");
     background-size: contain !important;
     background-repeat: no-repeat !important;
-    width: 79px;
-    height: 42px;
+    background-position: center !important;
+    margin-top: 10px;
+    height: 45px;
 }
 .backgroundclass{
-border: 1px solid #D6D6D6;
-border-radius: 20px;
+border: 1px solid #F6F6F6;
+border-radius: 10px;
 width:100px
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 .namediv{
     background: #F6F6F6;
+    border-bottom: #D6D6D6;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 180%;
+    letter-spacing: 0.05em;
+    color: #6B6C75
 }
-.container{
+.loadtruck{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: url("../../../assets/vehicles/container.svg");
     background-size: contain !important;
     background-repeat: no-repeat !important;
-    width: 64px;
-    height: 41px;
+    background-position: center !important;
+    height: 45px;
+    margin-top: 10px;
 }
-.lcv{
+.lcvtruck{
     background: url("../../../assets/vehicles/lcv.svg");
     background-size: contain !important;
     background-repeat: no-repeat !important;
-    width: 66px;
-    height: 39px;
+    background-position: center !important;
+    /* padding-top: 17px;
+    padding-left: 16px; */
+    margin-top: 10px;
+    height: 45px;
+   
+
 }
 .trailer{
     background: url("../../../assets/vehicles/trailer.svg");
     background-size: contain !important;
     background-repeat: no-repeat !important;
-    width: 56px;
-    height: 42px;
+    background-position: center !important;
+    height: 45px;
+    margin-top: 10px;
 }
-.truck{
+.truckvan{
     background: url("../../../assets/vehicles/truck.svg");
     background-size: contain !important;
     background-repeat: no-repeat !important;
-    width: 75px;
-    height: 44px;
+    background-position: center !important;
+    height: 45px;
+    margin-top: 10px;
+    /* padding-left: 39px; */
 }
