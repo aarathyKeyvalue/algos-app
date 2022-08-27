@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
+import useOutsideClick from '../../utils/custom-hooks';
 import './styles.css';
 
 const DialogBox = (props) => {
-  const { Component, success, height, details } = props
+  const { Component, success, setSuccess, height, details } = props
+
+  const refVal = useRef();
+
+  useOutsideClick(refVal, () => {
+    setSuccess(false);
+  })
   return (
     <>
       <div className={success && `overlay`} />
@@ -14,6 +21,7 @@ const DialogBox = (props) => {
           className={success && (`dialog`)}
           open={success}
           style={{ height }}
+          ref={refVal}
         >
           <Component
             success={success}

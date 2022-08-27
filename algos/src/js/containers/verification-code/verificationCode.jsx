@@ -94,6 +94,7 @@ const VerificationCode = (props) => {
           success={success}
           Component={RegistrationSuccess}
           height="535px"
+          setSuccess={setSuccess}
         />
       </div>
     </>

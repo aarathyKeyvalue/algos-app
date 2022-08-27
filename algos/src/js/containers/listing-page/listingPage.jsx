@@ -68,6 +68,7 @@ const ListingPage = (props) => {
           Component={DriverDetails}
           details={personDetails}
           height="700px"
+          setSuccess={setDetailsOpen}
         />
       </div>
     </div>
