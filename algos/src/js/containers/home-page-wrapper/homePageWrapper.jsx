@@ -7,7 +7,7 @@ const HomePageWrapper = (props) => {
   const [step, setStep] = useState(1);
   const [listedSuccess, setListedSuccess] = useState(false);
   const [details, setDetails] = useState({
-    tripStartDate: '27 August 2022'
+    tripStartDate: new Date().toISOString()
   });
 
   const toggleOptions = [

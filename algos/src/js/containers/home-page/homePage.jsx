@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import CalenderSection from "../../components/calender-section";
-import DialogBox from '../../components/dialog-box';
-import ToggleButton from "../../components/toggle-button/toggleButton";
-import Input from "../../components/input-field/input";
+import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
+import { utils } from "@hassanmojab/react-modern-calendar-datepicker";
 import Button from "../../components/button/Button";
+import Input from "../../components/input-field/input";
+import ToggleButton from "../../components/toggle-button/toggleButton";
+import DialogBox from "../../components/dialog-box";
+import CalenderSection from '../../components/calender-section';
 
 import './styles.css';
 import ListedSuccess from "../../components/listed-success";
@@ -18,7 +20,18 @@ const HomePage = (props) => {
     toggleOptions,
     listedSuccess,
     setListedSuccess } = props;
+    const today = utils().getToday();
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
+  const [selectedDay, setSelectedDay] = useState(today);
+
+  const onSelectDay = (newDay) => {
+    setSelectedDay(newDay);
+  };
+
+  const onConfirmCalenderSelection = () => {
+    setDetails({ ...details, tripStartDate: new Date(selectedDay.year, selectedDay.month - 1, selectedDay.day).toISOString() });
+    setIsCalenderOpen(false);
+  };
 
   const checkNext = () => {
     const detailVal = { ...details };
@@ -27,7 +40,13 @@ const HomePage = (props) => {
       if (detailVal[key] === '') error = true;
     })
     if (!error) setStep(2);
-  }
+  };
+  const formatDateString = (isoDateString) => {
+    const date = new Date(isoDateString);
+    const monthString = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date)?.substring(0, 3);
+		let newDateString = `${date.getDate()}/${monthString}/${date.getFullYear()} `;
+		return newDateString;
+  };
   return (
     <div class="homepageWrapper">
       <div class="mapContainer" />
@@ -73,7 +92,7 @@ const HomePage = (props) => {
               <Input
                 onFocus={() => setIsCalenderOpen(true)}
                 type="date"
-                val={details?.tripStartDate}
+                val={formatDateString(details?.tripStartDate)}
                 // onChange={(tripStartDate) => setDetails({ ...details, tripStartDate})}
               />
             </div>
@@ -118,7 +137,10 @@ const HomePage = (props) => {
               success={isCalenderOpen}
               Component={CalenderSection}
               componentProps={{
-                setIsCalenderOpen
+                setIsCalenderOpen,
+                value: selectedDay,
+                onChange: onSelectDay,
+                onConfirmCalenderSelection
               }}
               height="502px"
               setSuccess={setIsCalenderOpen}

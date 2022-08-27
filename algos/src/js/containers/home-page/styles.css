@@ -98,6 +98,10 @@ top: 47px;
     border: 1px solid #A7A9B759;
     height: 36px;
 }
+.Calendar__day.-selected, .Calendar__day.-selectedStart, .Calendar__day.-selectedEnd {
+    background: rgba(19, 59, 183, 0.15) !important;
+    color: black;
+}
 .otherInputs {
     margin-top: 15px;
 }

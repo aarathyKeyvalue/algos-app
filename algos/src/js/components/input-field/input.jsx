@@ -15,13 +15,8 @@ const Input = (props) => {
 	useEffect(() => {
 		setValue(val);
 	}, [val]);
-	const formatDate = (date) => {
-		const monthString = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date)?.substring(0, 3);
-		let newDateString = `${date?.getDay()}/${monthString}/${date.getFullYear()} `;
-		return newDateString;
 
-	};
-	const [value, setValue] = useState(type === 'date' ? formatDate(newDate) : '');
+	const [value, setValue] = useState(val);
 	const onValueChange = (e) => {
 		// if (type !== 'date') setValue(e.target.value);
 		onChange(e.target.value, type);
@@ -46,7 +41,7 @@ const Input = (props) => {
 			<input
 				class="input"
 				placeholder={placeholder}
-				value={value}
+				value={val}
 				onChange={onValueChange}
 				type={getInputType()}
         onFocus={onFocus}
