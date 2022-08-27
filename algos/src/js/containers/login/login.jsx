@@ -102,7 +102,7 @@ const Login = (props) => {
         <div className='signupbutton'>
         <SignupButton label="Sign Up With Google" className="button"/>
         </div>
-        <Vehicleselection/> 
+      <Vehicleselection/>
       </div>
     </div>
   )
