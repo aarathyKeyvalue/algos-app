@@ -5,7 +5,7 @@ import './styles.css';
 
 const RegistrationSuccess = () => {
 
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <div className="wrapper">
       <div className="starter" />
@@ -24,7 +24,7 @@ const RegistrationSuccess = () => {
           label="Go to Homepage"
           type="fill"
           width="100%"
-          handleClick={() => Navigate('/home')}
+          handleClick={() => navigate('/home')}
         />
       </div>
     </div>
