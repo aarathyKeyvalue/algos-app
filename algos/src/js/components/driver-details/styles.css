@@ -1,11 +1,13 @@
 .driverWrapper {
     padding: 10px 24px;
+    background-color: #FDFDFE;
+}
+
+.driverDetailWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #FDFDFE;
-    width: 88%;
 }
 
 .starter {
@@ -22,8 +24,8 @@
     border-radius: 18px;
 }
 .vehiclePicContainer {
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
     height: 38px;
     position: absolute;
     bottom: -4px;
@@ -98,7 +100,7 @@
 
 .timeAndDate {
     display: flex;
-    margin: 10px 29px 0;
+    margin: 10px 29px 15px;
     column-gap: 20px;
 }
 
@@ -128,8 +130,89 @@
 .phoneDiv {
     height: 55px;
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
     border-bottom: 1.5px solid #F3F3F3;
     border-top: 1.5px solid #F3F3F3;
+}
+
+.vehiclePicContainerDiv {
+    margin-top: 24px;
+    overflow-x: auto;
+    width: 100%;
+    display: flex;
+    column-gap: 16px;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.eachVehicleImage {
+    width: 285px;
+    height: 160px;
+    flex: 0 0 285px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.dialButtonImage {
+    background: url('../../../assets/main/phoneImageWhite.svg');
+    width: 16px;
+    height: 16px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.dialButton {
+    margin-top: 57px;
+    width: 100%;
+}
+
+.backButton {
+    margin-top: 15px;
+    width: 100%;
+}
+.vehicle101 {
+    background: url('../../../assets/vehiclespic/vehicle101.svg');
+}
+.vehicle102 {
+    background: url('../../../assets/vehiclespic/vehicle102.svg');
+}
+.vehicle201 {
+    background: url('../../../assets/vehiclespic/vehicle201.svg');
+}
+.vehicle202 {
+    background: url('../../../assets/vehiclespic/vehicle202.svg');
+}
+.vehicle301 {
+    background: url('../../../assets/vehiclespic/vehicle301.svg');
+}
+.vehicle401 {
+    background: url('../../../assets/vehiclespic/vehicle401.svg');
+}
+.vehicle402 {
+    background: url('../../../assets/vehiclespic/vehicle402.svg');
+}
+.vehicle403 {
+    background: url('../../../assets/vehiclespic/vehicle403.svg');
+}
+.vehicle501 {
+    background: url('../../../assets/vehiclespic/vehicle501.svg');
+}
+.vehicle601 {
+    background: url('../../../assets/vehiclespic/vehicle601.svg');
+}
+.vehicle701 {
+    background: url('../../../assets/vehiclespic/vehicle701.svg');
+}
+.vehicle801 {
+    background: url('../../../assets/vehiclespic/vehicle801.svg');
+}
+.vehicle901 {
+    background: url('../../../assets/vehiclespic/vehicle901.svg');
+}
+.vehicle1002 {
+    background: url('../../../assets/vehiclespic/vehicle1002.svg');
+}
+.vehicle1001 {
+    background: url('../../../assets/vehiclespic/vehicle1001.svg');
 }
