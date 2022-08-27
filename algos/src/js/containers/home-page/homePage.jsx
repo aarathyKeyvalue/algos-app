@@ -6,6 +6,7 @@ import Input from "../../components/input-field/input";
 import ToggleButton from "../../components/toggle-button/toggleButton";
 import DialogBox from "../../components/dialog-box";
 import CalenderSection from '../../components/calender-section';
+import CargoTimerWrapper from '../cargo-timer-wrapper'
 
 import './styles.css';
 import ListedSuccess from "../../components/listed-success";
@@ -23,6 +24,7 @@ const HomePage = (props) => {
     const today = utils().getToday();
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState(today);
+  const [isTimerOpen, setTimerOpen] = useState(false);
 
   const onSelectDay = (newDay) => {
     setSelectedDay(newDay);
@@ -50,7 +52,7 @@ const HomePage = (props) => {
   return (
     <div class="homepageWrapper">
       <div class="mapContainer" />
-      {!isCalenderOpen && !listedSuccess ? (
+      {!isCalenderOpen && !listedSuccess && !isTimerOpen ? (
         <div class="homeFormContainer">
           <div class="toggleButtonWrapper">
             <ToggleButton
@@ -107,17 +109,17 @@ const HomePage = (props) => {
               />
             </div>
             )) || (
-              <div class="inputContainer">
+              <div class="inputContainer" onClick={() => setTimerOpen(true)}>
                 <div class="title">Select Start Time & Waiting Period</div>
                 <div className="timeWaiting">
                   <div className="timeSelector">
                     <div className="clockGray" />
-                    <div className="clockTime">05:00 AM</div>
+                    <div className="clockTime">{details?.time || '--:--'}</div>
                   </div>
                   <div className="dividerLine"/>
                   <div className="timeSelector">
                     <div className="sandClockGray" />
-                    <div className="clockTime">30 Mins</div>
+                    <div className="clockTime">{details?.waitTime + ' ' || '-- '}Mins</div>
                   </div>
                 </div>
               </div>
@@ -156,9 +158,21 @@ const HomePage = (props) => {
               }}
               height="535px"
               setSuccess={() => {
-                setDetails({});
+                // setDetails({});
                 setListedSuccess(false);
               }}
+            />
+            <DialogBox
+              success={isTimerOpen}
+              Component={CargoTimerWrapper}
+              componentProps={{
+                setSuccess: setTimerOpen,
+                details,
+                setDetails,
+                selectedDate: new Date(details?.tripStartDate)
+              }}
+              height="502px"
+              setSuccess={setTimerOpen}
             />
           </>
         )}

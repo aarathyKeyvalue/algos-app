@@ -9,7 +9,7 @@ line-height: 16px;
 color:#000000;;
 text-align: center;
 /* margin-left: 144.5px; */
-margin-bottom: 24px;
+margin: 24px 0;
 }
 .time1{
 width: 96px;
@@ -50,6 +50,8 @@ color: #6200EE;
     flex-wrap: wrap;
     flex-direction: row;
     gap:9px;
+    justify-content: center;
+    align-items: center;
 }
 .time3{
     width: 52px;
@@ -57,9 +59,6 @@ color: #6200EE;
     background: #F2E7FE;
     border-radius: 4px 4px 0 0;
     border: none;
-}
-.sepimg{
-    margin-top: 25px;
 }
 .timebtn{
     display: flex;
@@ -71,5 +70,6 @@ color: #6200EE;
     height: 40px;
     border-radius: 0 0 4px 4px;
     border: none;
-
+    background-color: #FFFFFF;
+    border: 1px solid #DADCE0;
 }

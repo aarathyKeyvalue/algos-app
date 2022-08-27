@@ -2,32 +2,31 @@ import './styles.css';
 import seperator from '../../../assets/vehicles/Separator.svg'
 import { useState } from 'react';
 const Timer=(props)=>{
-    const {className,type,label,handleClick}=props;
-    const [time,setTime]=useState("")
-    const onChangeValue=()=>{
-        
-    }
+    const { subTexts, sub, setSub, label, onChangeValue}=props;
     return(
 <div>
-   
 <div className="classlabel">{label}</div>
 <div className='wrapping'>
 <div>
-<input className="time1"></input>
+<input className="time1" onChange={(e)=>onChangeValue('hrs', e?.target?.value)} />
 </div>
 <div className='sepimg'>
-<img src={seperator}/>
+    <img src={seperator} alt="" />
 </div>
 <div>
-<input className="time2" onChange={()=>onChangeValue()}></input>
+<input className="time2" onChange={(e)=>onChangeValue('min', e?.target?.value)} />
 </div>
 <div>
+{(subTexts?.map((subval) => (
 <div >
-<button className="time3"  onClick={()=>handleClick()}>AM</button>
+    <button
+      className={(subval === sub && 'time3') || 'time4'} 
+      onClick={()=>setSub(subval)}>{subval}</button>
 </div>
-<div>
-<button className="time4"  onClick={()=>handleClick()}>PM</button>
-</div>
+))) || (
+    <button
+      className={'time4'}>HR</button>
+)}
 </div>
 </div>
 </div>
