@@ -4,7 +4,8 @@ import Input from "../../components/input-field/input";
 import ToggleButton from "../../components/toggle-button/toggleButton";
 import './styles.css';
 
-const HomePage = () => {
+const HomePage = (props) => {
+  const { setStep, setDetails, details } = props;
   const toggleOptions = [
     {
       id: 'find',
@@ -29,11 +30,11 @@ const HomePage = () => {
         </div>
         <div class="locationsInputsContainer">
           <div class="iconsContainer">
-            <div class="iconContainer">
+            <div class="iconContainerVal">
               <div class="pickUpIcon" />
             </div>
             <div class="dotted-line" />
-            <div class="iconContainer">
+            <div class="iconContainerVal">
               <div class="locationPinIcon" />
             </div>
           </div>
@@ -42,11 +43,13 @@ const HomePage = () => {
               placeholder="Pick up Location"
               type="location"
               isRightLogo={true}
+              onChange={(startPoint) => setDetails({ ...details, startPoint })}
             />
             <Input
               placeholder="Destination"
               type="location"
               isRightLogo={true}
+              onChange={(destinationPoint) => setDetails({ ...details, destinationPoint })}
             />
           </div>
         </div>
@@ -56,7 +59,7 @@ const HomePage = () => {
             <Input
               // placeholder="Enter your name"
               type="date"
-              // onChange={onValueChange}
+              onChange={(tripStartDate) => setDetails({ ...details, tripStartDate})}
             />
           </div>
           <div class="inputContainer">
@@ -64,7 +67,7 @@ const HomePage = () => {
             <Input
               placeholder="Enter your package weight"
               type="weight"
-              // onChange={onValueChange}
+              onChange={(shipmentWeight) => setDetails({ ...details, shipmentWeight})}
             />
           </div>
         </div>
@@ -72,7 +75,7 @@ const HomePage = () => {
           label="Next"
           type="fill"
           width="100%"
-          // handleClick={() => navigate('/home')}
+          handleClick={() => setStep(2)}
         />
       </div>
     </div>

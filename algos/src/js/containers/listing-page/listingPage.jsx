@@ -6,18 +6,12 @@ import DialogBox from '../../components/dialog-box';
 import list from './list.js';
 import './styles.css';
 const ListingPage = (props) => {
-  
+  const { setStep, details } = props;
   const vehicleTypes = ['Truck', 'Hyva', 'LCV', 'Container', 'Trailer'];
   const [selectedType, setSelectedType] = useState('all');
   const [displayList, setDisplayList] = useState(list);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [personDetails, setPersonDetails] = useState({});
-  const details = {
-    from: 'Kakkanad, Kochi,K.',
-    to: 'HSR Layout Sectors',
-    date: '27 August 2022',
-    weight: '180 Kg'
-  }
   useEffect(() => {
     if (selectedType === 'all') setDisplayList(list);
     else {
@@ -28,8 +22,11 @@ const ListingPage = (props) => {
   return (
     <div style={{ height: '100%' }}>
       <div className="locationDiv">
-        <div className="backbuttonDiv" />
-        <LocationDetails {...details}/>
+        <div
+          className="backbuttonDiv"
+          onClick={() => setStep(1)}
+        />
+        <LocationDetails {...details} onClickDiv={() => setStep(1)}/>
       </div>
       <div className="partnerHeader">
         <span className="headerText">Available Partners</span>

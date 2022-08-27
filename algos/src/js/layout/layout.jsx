@@ -6,11 +6,10 @@ import {
   HashRouter as Router  } from 'react-router-dom';
 import MainContainer from '../containers/login-container/loginContainer';
 import VerificationCode from '../containers/verification-code';
-import HomePage from '../containers/listing-page';
+import HomePage from '../containers/home-page-wrapper';
 import './styles.css';
 
-const Layout = (props) => {
-  const { id } = props;
+const Layout = () => {
   return (
     <div class="layoutWrapper">
       <div className='header'>

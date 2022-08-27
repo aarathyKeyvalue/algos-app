@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from './styles.css';
+import './styles.css';
 
 const Input = (props) => {
 	const { placeholder, type, onChange, isRightLogo = false } = props;
