@@ -14,6 +14,7 @@
 .iconWrapper {
   width: 24px;
   height: 24px;
+  min-width: 24px;
 }
 .leftLogo {
   margin-right: 20px;
@@ -33,7 +34,14 @@
 .location {
   background-image: url('../../../assets/main/location.svg');
 }
+.date {
+  background-image: url('../../../assets/main/calender.svg');
+}
+.weight {
+  background-image: url('../../../assets/main/weight-icon.svg');
+}
 .input {
+  width: 100%;
     outline: none;
     border: none;
     font-family: 'Avenir';
@@ -50,4 +58,12 @@
   font-size: 14px;
   line-height: 180%;
   color: #6B6C75;
+}
+.weightUnit {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  margin-right: 13px;
 }
