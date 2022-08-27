@@ -78,8 +78,9 @@ top: 47px;
     width: 100% !important;
     box-shadow: none;
 }
-.Calendar__day:not(.-blank):not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween):not(.-selected):hover {
-    background: rgba(19, 59, 183, 0.15) !important; 
+.Calendar__day.-selected, .Calendar__day.-selectedStart, .Calendar__day.-selectedEnd {
+    background: rgba(19, 59, 183, 0.15) !important;
+    color: black;
 }
 .calenderButtonWrapper {
 width: 100%;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
-import { Calendar } from "@hassanmojab/react-modern-calendar-datepicker";
+import { Calendar, utils } from "@hassanmojab/react-modern-calendar-datepicker";
 import Button from "../../components/button/Button";
 import Input from "../../components/input-field/input";
 import ToggleButton from "../../components/toggle-button/toggleButton";
@@ -19,8 +19,19 @@ const HomePage = (props) => {
       name: 'Offer Cargo Space',
     }
   ];
+  const today = utils().getToday();
   const [selectedOption, setSelectedOption] = useState(toggleOptions[0]?.id)
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
+  const [selectedDay, setSelectedDay] = useState(today);
+
+  const onSelectDay = (newDay) => {
+    setSelectedDay(newDay);
+  };
+
+  const onConfirmCalenderSelection = () => {
+    setDetails({ ...details, tripStartDate: new Date(selectedDay.year, selectedDay.month - 1, selectedDay.day).toISOString() });
+    setIsCalenderOpen(false);
+  };
 
   return (
     <div class="homepageWrapper">
@@ -89,7 +100,9 @@ const HomePage = (props) => {
           <div className="calenderAndButtonWrapper">
             <div classname="calenderWrapper">
               <Calendar
-              // onDayPress={day => {console.log('selected day', day);}}
+                value={selectedDay}
+                onChange={onSelectDay}
+                minimumDate={utils().getToday()}
               />
             </div>
             <div className="calenderButtonWrapper">
@@ -103,7 +116,7 @@ const HomePage = (props) => {
                 label="Confirm"
                 type="fill" 
                 width="158px"
-                handleClick={() => {}}
+                handleClick={onConfirmCalenderSelection}
               />
     
             </div>
