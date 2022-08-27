@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 24px;
+}
+
+.logoContainer {
+    background: url('../../../assets/main/cargo-logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 61px;
+    height: 54px;
+    margin: 29px 0px;
+}
+
+.tagline {
+    font-family: Avenir;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.subtagline {
+    margin-top: 10px;
+    color: #6B6C75;
+    font-size: 14px;
+}

@@ -1,0 +1,26 @@
+.wrapperDiv {
+    background-color: #F8F9FB;
+    border-radius: 50px;
+    display: flex;
+    padding: 4px;
+    width: fit-content;
+}
+
+.eachItem {
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    height: 42px;
+}
+
+.selected {
+    background: #FFFFFF;
+    border-radius: 50px;
+    color: #191D31;
+}
+
+.inactive {
+    color: #A7A9B7;
+}

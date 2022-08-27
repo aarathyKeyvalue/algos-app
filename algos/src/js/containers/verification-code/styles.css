@@ -1,0 +1,30 @@
+.backbutton {
+    background: url('../../../assets/main/back.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 46px;
+    height: 46px;
+    margin-top: 42px;
+}
+
+.verification {
+    font-family: Avenir;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.subtext {
+    margin-top: 10px;
+    color: #6B6C75;
+    font-size: 14px;
+    width: 71%;
+    line-height: 25px;
+}
+
+.inputFields {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+}

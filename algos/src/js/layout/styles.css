@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 19px;
+    padding: 18px 15px 0 24px;
+    font-weight: 500;
+}
+.iconContainer {
+    display: flex;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 24px;
+}
+.range{
+    background: url('../../assets/main/range.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 11px;
+    margin: 0 5px;
+}
+.battery{
+    background: url('../../assets/main/battery.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 11px;
+    margin: 0 5px;
+}
+.wifi{
+    background: url('../../assets/main/wifi.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 11px;
+    margin: 0 5px;
+}
