@@ -17,6 +17,10 @@ overflow: hidden;
 .iconContainer {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    height: 52px;
+    width: 38px;
+
 }
 .containerVal{
     height: calc(100vh - 37px);

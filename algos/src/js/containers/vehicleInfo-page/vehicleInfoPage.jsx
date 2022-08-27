@@ -14,7 +14,7 @@ const vehicleInfoPage = () => {
         </div>
       </div>
       <div>
-        <input className="weight"></input>
+        <input className="weightInput"></input>
 
       </div>
       <div className="infovehicle">
