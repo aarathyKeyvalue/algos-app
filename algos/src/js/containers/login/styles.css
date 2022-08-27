@@ -21,3 +21,15 @@
 .error {
     color: red !important; 
 }
+.text{
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    text-align: center;
+    color: #6B6C75;
+    border-top: 1px solid  rgba(107, 108, 117, 0.2);
+    margin-top: 25px;
+
+}
