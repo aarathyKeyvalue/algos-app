@@ -11,7 +11,7 @@ import './styles.css';
 const Layout = (props) => {
   const { id } = props;
   return (
-    <div>
+    <div class="layoutWrapper">
       <div className='header'>
         <div>9:41</div>
         <div className='iconContainer'>

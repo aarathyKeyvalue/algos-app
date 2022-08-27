@@ -3,9 +3,7 @@ import Layout from './js/layout/layout';
 
 function App() {
   return (
-    <div>
       <Layout />
-    </div>
   );
 }
 

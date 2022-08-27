@@ -6,7 +6,7 @@ const LoginContainer = (props) => {
   const { type } = props;
 
   return (
-    <div>
+    <div class="loginContainer">
       <div className='logoContainer' />
       <div className="tagline">Shipping and Track Anytime </div>
       <div className="subtagline">Get great experience with tracky</div>
