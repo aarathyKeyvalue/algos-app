@@ -50,6 +50,7 @@ const Login = (props) => {
           <Button
             type="fill"
             label="Create Account"
+            width="100%"
           />
         </div>
       </div>
