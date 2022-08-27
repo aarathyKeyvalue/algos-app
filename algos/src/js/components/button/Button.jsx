@@ -1,10 +1,18 @@
-import "./butstyles.css";
+import React from "react";
+import "./styles.css";
+
 const Button = (props) => {
-  const { label, className, type, handleClick } = props;
+  const { label, type, handleClick, width } = props;
   return (
     <>
-      <div>
-        <button className={type } onClick={()=>handleClick()}>{label} </button>
+      <div style={{ width }}>
+        <button
+          className={type}
+          onClick={()=>handleClick()}
+          style={{ width }}
+        >
+          {label}
+        </button>
       </div>
     </>
   );

@@ -8,7 +8,7 @@
 .iconContainer {
     display: flex;
 }
-.container {
+.containerVal{
     width: 100%;
     height: 100%;
     margin: 0 24px;

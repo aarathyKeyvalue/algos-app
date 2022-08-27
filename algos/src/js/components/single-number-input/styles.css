@@ -1,9 +1,17 @@
 .singleInput {
-    width: 66px;
-    height: 59px;
+    width: -webkit-fill-available;
+    padding: 0 27px;
     background-color: #F8F9FB;
     border-radius: 12px;
     font-size: 22px;
     color: #191D31;
     border: none;
+    outline: none;
+}
+
+.wrapperVal {
+    width: 66px;
+    height: 59px;
+    display: flex;
+    justify-content: center;
 }

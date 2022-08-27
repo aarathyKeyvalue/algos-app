@@ -5,7 +5,7 @@ const SingleNumberInput = (props) => {
   const { val, setVal } = props;
 
   return (
-    <div>
+    <div className="wrapperVal">
       <input
         type="number"
         maxLength={1}

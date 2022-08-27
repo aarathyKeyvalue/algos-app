@@ -20,7 +20,7 @@ const Layout = (props) => {
           <div className='battery'/>
         </div>
       </div>
-      <div className='container'>
+      <div className='containerVal'>
         <Router>
           <Switch>
             <Route path="/" exact={true} element={<Navigate to ="/login" />}/>
