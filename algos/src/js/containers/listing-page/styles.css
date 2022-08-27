@@ -1,0 +1,63 @@
+.partnerCount {
+    border-radius: 20px;
+    min-width: 8px;
+    font-family: Avenir;
+    padding: 0 4px;
+    height: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12.6px;
+    margin-left: 8px;
+    background: #822DEE;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partnerHeader {
+    display: flex;
+    align-items: center;
+    width: 163px;
+    justify-content: center;
+    margin-top: 14px;
+}
+.headerText {
+    font-family: Avenir;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 21px;
+}
+
+.buttonGroup {
+    margin-top: 18px;
+    gap: 10px;
+    display: flex;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+.buttonUnselected {
+    background: #F6F6F7;
+    color: #1D272F;
+}
+.eachButton {
+    padding: 0 23px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: Avenir;
+    border-radius: 12px;
+}
+.buttonSelected {
+    background: #1D272F;
+    color: #FFFFFF
+}
+
+.listSection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 23px;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from '../../components/input-field';
 import ToggleButton from '../../components/toggle-button/toggleButton';
 import Button from '../../components/button/Button';
@@ -6,6 +6,8 @@ import './styles.css';
 
 const Login = (props) => {
   const { type = 'normal' } = props;
+
+  const [selected, setSelected] = useState('signUp')
   const loginButtons = [
     {
       id: 'signUp',
@@ -22,7 +24,8 @@ const Login = (props) => {
         <div>
           <ToggleButton
             list={loginButtons}
-            selectedVal='signUp'
+            selected={selected}
+            setSelected={setSelected}
           />
         </div>
         <div class="inputContainer">
@@ -49,7 +52,7 @@ const Login = (props) => {
         <div class="buttonContainer">
           <Button
             type="fill"
-            label="Create Account"
+            label={(selected === 'signUp' && "Create Account") || 'Log In'}
             width="100%"
           />
         </div>

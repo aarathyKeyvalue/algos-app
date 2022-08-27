@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import RegistrationSuccess from '../../components/registration-success'
 import Button from '../../components/button/Button';
 import SingleNumberInput from '../../components/single-number-input'
@@ -11,7 +11,7 @@ const VerificationCode = (props) => {
   const [resentActive, setResentActive] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   function countdown(minutes, seconds) {
     // set time for the particular countdown
     let time = minutes*60 + seconds;
@@ -51,7 +51,10 @@ const VerificationCode = (props) => {
   return (
     <>
       <div className="verificationWrapper">
-        <div className="backbutton" />
+        <div
+          className="backbutton"
+          onClick={() =>navigate('/login')}
+        />
         <div className="verification">Verification Code</div>
         <div className="subtextContainer">We have sent the code verification to your number {phoneNo}</div>
         <div className="inputFields">
@@ -81,13 +84,13 @@ const VerificationCode = (props) => {
           </span>
         </div>
       </div>
-      <div className={`registrationSuccess ${success && 'showRegistrationSuccess'}`}>
+      <div className={`registrationSuccess`}>
         {success && (
         <>
-          <div className="overlay" />
+          <div className={`overlay ${success && 'showRegistrationSuccess'}`} />
           <div className="dialogWrapper">
             <dialog className="dialog" open={success}>
-            <RegistrationSuccess />
+            <RegistrationSuccess success={success}/>
             </dialog>
           </div>
         </>)}

@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import Button from "../button/Button";
 import './styles.css';
 
 const RegistrationSuccess = () => {
-  const navigateTo = () => {};
+
+  const Navigate = useNavigate();
   return (
     <div className="wrapper">
       <div className="starter" />
@@ -18,7 +20,12 @@ const RegistrationSuccess = () => {
         </div>
       </div>
       <div className="homepageButton">
-        <Button label="Go to Homepage" type="fill" width="100%" />
+        <Button
+          label="Go to Homepage"
+          type="fill"
+          width="100%"
+          handleClick={() => Navigate('/home')}
+        />
       </div>
     </div>
   )

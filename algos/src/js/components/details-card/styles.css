@@ -1,0 +1,59 @@
+.detailsCard {
+    height: 138px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 80px 0px #7A7F9C26;
+    padding: 12px;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.basicDetails {
+    display: flex;
+}
+
+.profilePic {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 44px;
+}
+.vehiclePic {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 38px;
+}
+.person1 {
+    background: url('../../../assets/people/person1.svg');
+}
+.person2 {
+    background: url('../../../assets/people/person2.svg');
+}
+.person3 {
+    background: url('../../../assets/people/person3.svg');
+}
+.person4 {
+    background: url('../../../assets/people/person4.svg');
+}
+
+.truck {
+    background: url('../../../assets/vehicles/truck.svg');
+    width: 64px;
+}
+.container {
+    background: url('../../../assets/vehicles/container.svg');
+    width: 64px;
+}
+.lcv {
+    background: url('../../../assets/vehicles/lcv.svg');
+    width: 66px;
+}
+.hyva {
+    background: url('../../../assets/vehicles/hyva.svg');
+    width: 70px;
+}
+.trailer {
+    background: url('../../../assets/vehicles/trailer.svg');
+    width: 57x;
+}
