@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from '../../components/input-field';
 import ToggleButton from '../../components/toggle-button/toggleButton';
+import Button from '../../components/button/Button';
 import './styles.css';
 
 const Login = (props) => {
@@ -46,7 +47,10 @@ const Login = (props) => {
         />
         </div>
         <div class="buttonContainer">
-
+          <Button
+            type="fill"
+            label="Create Account"
+          />
         </div>
       </div>
     </div>
