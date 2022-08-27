@@ -1,0 +1,43 @@
+.hyva{
+    background: url("../../../assets/vehicles/hyva.svg");
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    width: 79px;
+    height: 42px;
+}
+.backgroundclass{
+border: 1px solid #D6D6D6;
+border-radius: 20px;
+width:100px
+}
+.namediv{
+    background: #F6F6F6;
+}
+.container{
+    background: url("../../../assets/vehicles/container.svg");
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    width: 64px;
+    height: 41px;
+}
+.lcv{
+    background: url("../../../assets/vehicles/lcv.svg");
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    width: 66px;
+    height: 39px;
+}
+.trailer{
+    background: url("../../../assets/vehicles/trailer.svg");
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    width: 56px;
+    height: 42px;
+}
+.truck{
+    background: url("../../../assets/vehicles/truck.svg");
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    width: 75px;
+    height: 44px;
+}

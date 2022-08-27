@@ -1,9 +1,18 @@
+import "./styles.css";
+import google from "../../../assets/main/Google-Icon.svg"
 const SignupGoogle = (props) => {
-  const { label } = props;
+  const { className,label ,handleClick} = props;
   return (
     <>
-      <div>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+      <div className="divtag">
+        <button className={className} onClick={()=>handleClick()}>
+            
+       
+        <div className="googleimg">
+        <img src={google} />
+        </div>
+        {label}
+        </button>
       </div>
     </>
   );

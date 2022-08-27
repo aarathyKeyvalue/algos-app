@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/input-field';
+import SignupButton from '../../components/sign-up-button';
 import ToggleButton from '../../components/toggle-button/toggleButton';
 import Button from '../../components/button/Button';
 import './styles.css';
+import Vehicleselection from '../../components/vehicleselection/Vehicleselection';
 
 const Login = (props) => {
   const { type = 'normal' } = props;
@@ -80,6 +82,7 @@ const Login = (props) => {
           onChange={onValueChange}
         />
         </div>
+        
         <div class="buttonContainer">
           <Button
             type="fill"
@@ -89,7 +92,17 @@ const Login = (props) => {
               handleCreateButtonClick()
             }}
           />
+          
         </div>
+        <div>
+      
+       </div>
+        <div className='text'>OR</div>
+     
+        <div className='signupbutton'>
+        <SignupButton label="Sign Up With Google" className="button"/>
+        </div>
+        <Vehicleselection/> 
       </div>
     </div>
   )
