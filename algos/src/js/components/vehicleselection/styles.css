@@ -1,9 +1,9 @@
-.hyvatruck{
+.hyvavan{
     background: url("../../../assets/vehicles/hyva.svg");
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    margin-top: 10px;
+    margin: 15px 0 13px;
     height: 45px;
 }
 .backgroundclass{
@@ -11,11 +11,25 @@ border: 1px solid #F6F6F6;
 border-radius: 10px;
 width:100px
 }
+.vehicleSelectionWrapper {
+    margin: 16px 24px;
+}
+.vehicleSelectionSubmit {
+    margin-top: 30px;
+    width: 100%;
+}
+.selectedVehicleType {
+    border: 1px solid #822DEE !important;
+}
+.selectedVehiclenameDiv {
+    color: #822DEE !important;
+}
 .row{
     display: flex;
     flex-direction: row;
     gap: 10px;
     flex-wrap: wrap;
+    margin-top: 16px;
 }
 .namediv{
     background: #F6F6F6;
@@ -30,7 +44,7 @@ width:100px
     letter-spacing: 0.05em;
     color: #6B6C75
 }
-.loadtruck{
+.containervan{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,27 +53,25 @@ width:100px
     background-repeat: no-repeat !important;
     background-position: center !important;
     height: 45px;
-    margin-top: 10px;
+    margin: 15px 0 13px;
 }
-.lcvtruck{
+.lcvvan{
     background: url("../../../assets/vehicles/lcv.svg");
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    /* padding-top: 17px;
-    padding-left: 16px; */
-    margin-top: 10px;
+    margin: 15px 0 13px;
     height: 45px;
    
 
 }
-.trailer{
+.trailervan{
     background: url("../../../assets/vehicles/trailer.svg");
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     height: 45px;
-    margin-top: 10px;
+    margin: 15px 0 13px;
 }
 .truckvan{
     background: url("../../../assets/vehicles/truck.svg");
@@ -67,6 +79,5 @@ width:100px
     background-repeat: no-repeat !important;
     background-position: center !important;
     height: 45px;
-    margin-top: 10px;
-    /* padding-left: 39px; */
+    margin: 15px 0 13px;
 }
