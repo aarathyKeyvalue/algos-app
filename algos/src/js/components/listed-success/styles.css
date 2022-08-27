@@ -1,0 +1,55 @@
+.wrapperListed {
+    padding: 10px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDFDFE;
+    width: 100%;
+}
+
+.starter {
+    width: 60px;
+    height: 6px;
+    background-color: #DFE2EB;
+}
+
+.imageContainer {
+    height: 389px;
+    position: relative;
+}
+.image {
+    background: url('../../../assets/main/listSuccess.svg');
+    width: 375px;
+    height: 424px;
+}
+
+.imageText {
+    position: absolute;
+    bottom: 0;
+    margin: 0 29px;
+}
+
+.mainText {
+    font-family: Avenir;;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 29px;
+    text-align: center;
+}
+
+.subtext {
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.homepageButton {
+    margin-bottom: 47px;
+    margin-top: 30px;
+    width: 100%;
+}

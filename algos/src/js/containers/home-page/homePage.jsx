@@ -6,20 +6,18 @@ import Input from "../../components/input-field/input";
 import Button from "../../components/button/Button";
 
 import './styles.css';
+import ListedSuccess from "../../components/listed-success";
 
 const HomePage = (props) => {
-  const { setStep, setDetails, details } = props;
-  const toggleOptions = [
-    {
-      id: 'find',
-      name: 'Find Cargo Space',
-    },
-    {
-      id: 'offer',
-      name: 'Offer Cargo Space',
-    }
-  ];
-  const [selectedOption, setSelectedOption] = useState(toggleOptions[0]?.id)
+  const {
+    setStep,
+    setDetails,
+    details,
+    selectedOption,
+    setSelectedOption,
+    toggleOptions,
+    listedSuccess,
+    setListedSuccess } = props;
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
 
   const checkNext = () => {
@@ -33,7 +31,7 @@ const HomePage = (props) => {
   return (
     <div class="homepageWrapper">
       <div class="mapContainer" />
-      {!isCalenderOpen ? (
+      {!isCalenderOpen && !listedSuccess ? (
         <div class="homeFormContainer">
           <div class="toggleButtonWrapper">
             <ToggleButton
@@ -115,6 +113,7 @@ const HomePage = (props) => {
         </div>
       )
         : (
+          <>
           <DialogBox
               success={isCalenderOpen}
               Component={CalenderSection}
@@ -124,7 +123,24 @@ const HomePage = (props) => {
               height="502px"
               setSuccess={setIsCalenderOpen}
             />
+          <DialogBox
+              success={listedSuccess}
+              Component={ListedSuccess}
+              componentProps={{
+                setSuccess: () => {
+                  setDetails({});
+                  setListedSuccess(false);
+                }
+              }}
+              height="535px"
+              setSuccess={() => {
+                setDetails({});
+                setListedSuccess(false);
+              }}
+            />
+          </>
         )}
+        
     </div>
   );
 };

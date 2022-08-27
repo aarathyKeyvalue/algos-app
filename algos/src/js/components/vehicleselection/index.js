@@ -1,3 +1,3 @@
-import Vehicleselection from "./Vehicleselection";
+import Vehicleselection from "./vehicleselection";
 
 export default Vehicleselection;

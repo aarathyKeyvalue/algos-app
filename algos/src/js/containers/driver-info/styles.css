@@ -1,0 +1,39 @@
+.backbuttonWrapper {
+    background: url('../../../assets/main/back.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 46px;
+    height: 46px;
+}
+
+.addYourInfo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Avenir;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 21px;
+    letter-spacing: 0em;
+}
+.infoDiv {
+    display: flex;
+    margin: 0 24px;
+}
+
+.selectionSpan {
+    height: 4px;
+    width: 160px;
+}
+.activeSpan {
+    background: #822DEE;
+}
+.inactiveSpan {
+    background: #D9D9D9;
+}
+.selectionDivs {
+    margin: 0 24px;
+    display: flex;
+    gap: 7px;
+}

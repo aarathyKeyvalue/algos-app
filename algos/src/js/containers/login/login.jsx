@@ -5,8 +5,6 @@ import SignupButton from '../../components/sign-up-button';
 import ToggleButton from '../../components/toggle-button/toggleButton';
 import Button from '../../components/button/Button';
 import './styles.css';
-import Vehicleselection from '../../components/vehicleselection/Vehicleselection';
-import vehicleInfoPage from '../vehicleInfo-page/vehicleInfoPage';
 const Login = (props) => {
   const { type = 'normal' } = props;
 

@@ -1,53 +1,36 @@
-
-import lcv from "../../../assets/main/LCV.svg";
-import trailer from "../../../assets/main/trailer.svg";
-import truck from "../../../assets/main/Truck.svg";
-import container from "../../../assets/main/container.svg";
+import React from "react";
+import Button from "../button/Button";
 import "./styles.css";
-const Vehicleselection=()=>{
-return(
-<div className="row">
-
-    <div className="backgroundclass">
-    <div className='lcvtruck'>
+const Vehicleselection=(props)=>{
+    const { vehicleType, setVehicleType, setListedSuccess, setStep } = props;
+    const vehicleTypes = ['Truck', 'Hyva', 'LCV', 'Container', 'Trailer'];
+    return(
+    <div className="vehicleSelectionWrapper">
+        <div className="headerVehicleInfo">Vehicle Info</div>
+            <div className="row">
+                {vehicleTypes?.map((type) => (
+                <div
+                  className={`backgroundclass ${vehicleType === String(type)?.toLowerCase() && 'selectedVehicleType'}`}
+                  onClick={() => setVehicleType(String(type)?.toLowerCase())}>
+                    <div className={`${String(type)?.toLowerCase()}van`} />
+                    <div className={`namediv ${vehicleType === String(type)?.toLowerCase() && 'selectedVehiclenameDiv'}`}>
+                        {type}
+                    </div>
+                </div>
+                ))}
+            </div>
+        <div className="vehicleSelectionSubmit">
+            <Button
+                type="fill"
+                label="Submit"
+                width="100%"
+                handleClick={() => {
+                    setListedSuccess(true);
+                    setStep(1);
+                }}
+            />
+        </div>
     </div>
-    <div className="namediv">
-    LCV
-    </div>
-    </div>
-
-    <div className="backgroundclass">
-    <div className='truckvan'>
-    </div>
-    <div className="namediv">
-    Truck
-    </div>
-    </div>
-    <div className="backgroundclass">
-    <div className='hyvatruck'>
-    </div>
-    <div className="namediv">
-    Hyva
-    </div>
-    </div>
-    
-    
-    <div className="backgroundclass">
-    <div className='loadtruck'>
-    </div>
-    <div className="namediv">
-    Container
-    </div>
-    </div>
-    <div className="backgroundclass">
-    <div className='trailer'>
-    </div>
-    <div className="namediv">
-    Trailer
-    </div>
-    </div>
-
-</div>
-)
+    )
 };
 export default Vehicleselection;
