@@ -5,6 +5,7 @@ import SignupButton from '../../components/sign-up-button';
 import ToggleButton from '../../components/toggle-button/toggleButton';
 import Button from '../../components/button/Button';
 import './styles.css';
+import Timer from '../../components/timer';
 const Login = (props) => {
   const { type = 'normal' } = props;
 
@@ -96,8 +97,8 @@ const Login = (props) => {
      
         <div className='signupbutton'>
         <SignupButton label="Sign Up With Google" className="button"/>
-        
         </div>
+        <Timer label="SELECT TIME" />
       
       </div>
     </div>
