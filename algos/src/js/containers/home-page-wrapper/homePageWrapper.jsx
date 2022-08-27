@@ -5,7 +5,7 @@ import ListingPage from "../listing-page";
 const HomePageWrapper = (props) => {
   const [step, setStep] = useState(1);
   const [details, setDetails] = useState({
-    tripStartDate: '27 August 2022'
+    tripStartDate: new Date().toISOString()
   });
 
   return (
