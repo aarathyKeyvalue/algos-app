@@ -1,0 +1,218 @@
+.driverWrapper {
+    padding: 10px 24px;
+    background-color: #FDFDFE;
+}
+
+.driverDetailWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.starter {
+    width: 60px;
+    height: 6px;
+    background-color: #DFE2EB;
+}
+.profilePic {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+}
+.vehiclePicContainer {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    height: 38px;
+    position: absolute;
+    bottom: -4px;
+    right: -16px;
+    z-index: 10;
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.21));
+}
+.shadow {
+    background: url('../../../assets/main/shadow.svg');
+    position: absolute;
+    width: 49px;
+    height: 49px;
+    right: -4px;
+    bottom: -4px;
+    z-index: 0;
+}
+.driverNameVal {
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 23px;
+    margin-top: 20px;
+}
+.profilePicContainer {
+    margin-top: 30px;
+    position: relative;
+}
+.person1 {
+    background: url('../../../assets/people/person1.svg');
+}
+.person2 {
+    background: url('../../../assets/people/person2.svg');
+}
+.person3 {
+    background: url('../../../assets/people/person3.svg');
+}
+.person4 {
+    background: url('../../../assets/people/person4.svg');
+}
+
+.truck {
+    background: url('../../../assets/vehicles/truck.svg');
+    width: 64px;
+}
+.container {
+    background: url('../../../assets/vehicles/container.svg');
+    width: 64px;
+}
+.lcv {
+    background: url('../../../assets/vehicles/lcv.svg');
+    width: 66px;
+}
+.hyva {
+    background: url('../../../assets/vehicles/hyva.svg');
+    width: 70px;
+}
+.trailer {
+    background: url('../../../assets/vehicles/trailer.svg');
+    width: 57x;
+}
+.vehicleDetails {
+    color: #A7A9B7;
+    font-size: 14px;
+    margin-top: 4px;
+}
+.eachDetail {
+    padding: 0 4px;
+}
+.eachDetail:not(:last-child) {
+    border-right: 1px solid #A7A9B7;
+}
+
+.timeAndDate {
+    display: flex;
+    margin: 10px 29px 15px;
+    column-gap: 20px;
+}
+
+.timeDateVal {
+    display: flex;
+    column-gap: 6px;
+}
+
+.clock {
+    background: url('../../../assets/main/clock.svg');
+    width: 20px;
+    height: 20px;
+}
+.calenderFilled {
+    background: url('../../../assets/main/calenderfilled.svg');
+    width: 20px;
+    height: 20px;
+}
+
+.timeDiffOrDate {
+    font-family: Avenir;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.phoneDiv {
+    height: 55px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1.5px solid #F3F3F3;
+    border-top: 1.5px solid #F3F3F3;
+}
+
+.vehiclePicContainerDiv {
+    margin-top: 24px;
+    overflow-x: auto;
+    width: 100%;
+    display: flex;
+    column-gap: 16px;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.eachVehicleImage {
+    width: 285px;
+    height: 160px;
+    flex: 0 0 285px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.dialButtonImage {
+    background: url('../../../assets/main/phoneImageWhite.svg');
+    width: 16px;
+    height: 16px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.dialButton {
+    margin-top: 57px;
+    width: 100%;
+}
+
+.backButton {
+    margin-top: 15px;
+    width: 100%;
+}
+.vehicle101 {
+    background: url('../../../assets/vehiclespic/vehicle101.svg');
+}
+.vehicle102 {
+    background: url('../../../assets/vehiclespic/vehicle102.svg');
+}
+.vehicle201 {
+    background: url('../../../assets/vehiclespic/vehicle201.svg');
+}
+.vehicle202 {
+    background: url('../../../assets/vehiclespic/vehicle202.svg');
+}
+.vehicle301 {
+    background: url('../../../assets/vehiclespic/vehicle301.svg');
+}
+.vehicle401 {
+    background: url('../../../assets/vehiclespic/vehicle401.svg');
+}
+.vehicle402 {
+    background: url('../../../assets/vehiclespic/vehicle402.svg');
+}
+.vehicle403 {
+    background: url('../../../assets/vehiclespic/vehicle403.svg');
+}
+.vehicle501 {
+    background: url('../../../assets/vehiclespic/vehicle501.svg');
+}
+.vehicle601 {
+    background: url('../../../assets/vehiclespic/vehicle601.svg');
+}
+.vehicle701 {
+    background: url('../../../assets/vehiclespic/vehicle701.svg');
+}
+.vehicle801 {
+    background: url('../../../assets/vehiclespic/vehicle801.svg');
+}
+.vehicle901 {
+    background: url('../../../assets/vehiclespic/vehicle901.svg');
+}
+.vehicle1002 {
+    background: url('../../../assets/vehiclespic/vehicle1002.svg');
+}
+.vehicle1001 {
+    background: url('../../../assets/vehiclespic/vehicle1001.svg');
+}

@@ -6,8 +6,12 @@ import {
   HashRouter as Router  } from 'react-router-dom';
 import MainContainer from '../containers/login-container/loginContainer';
 import VerificationCode from '../containers/verification-code';
+<<<<<<< HEAD
 import HomePage from '../containers/home-page';
 import VehicleInfoPage from '../containers/vehicleInfo-page/vehicleInfoPage';
+=======
+import HomePage from '../containers/listing-page';
+>>>>>>> 961c6f0249228f44ed6276a4a72087ad3406b94b
 import './styles.css';
 
 const Layout = (props) => {
