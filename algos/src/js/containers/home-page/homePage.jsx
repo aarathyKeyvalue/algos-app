@@ -69,7 +69,7 @@ const HomePage = () => {
           </div>
         </div>
         <Button
-          label="Go to Homepage"
+          label="Next"
           type="fill"
           width="100%"
           // handleClick={() => navigate('/home')}

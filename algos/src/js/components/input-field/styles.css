@@ -36,6 +36,8 @@
 }
 .date {
   background-image: url('../../../assets/main/calender.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .weight {
   background-image: url('../../../assets/main/weight-icon.svg');
