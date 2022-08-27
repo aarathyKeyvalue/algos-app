@@ -8,7 +8,9 @@ const Input = (props) => {
 		onChange,
 		isRightLogo = false,
 		onFocus,
-		val
+		val,
+		valueRef,
+		onBlur
 	} = props;
 	const newDate = new Date();
 
@@ -33,6 +35,12 @@ const Input = (props) => {
 		};
 	};
 
+	const handleOnBlur = () => {
+		if (onBlur) {
+			onBlur();
+		}
+	};
+
 	return (
 		<div className={`inputWrapper  ${isRightLogo && 'rightLogoInputWrapper'}`}>
 			{!isRightLogo && type && (
@@ -44,7 +52,9 @@ const Input = (props) => {
 				value={val}
 				onChange={onValueChange}
 				type={getInputType()}
-        onFocus={onFocus}
+        		onFocus={onFocus}
+				ref={valueRef}
+				onBlur={handleOnBlur}
 			/>
 			{isRightLogo && type && (
 				<div class={`iconWrapper ${type} rightLogo`} />

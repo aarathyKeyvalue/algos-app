@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import {
+  Autocomplete
+} from '@react-google-maps/api'
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import { utils } from "@hassanmojab/react-modern-calendar-datepicker";
 import Button from "../../components/button/Button";
@@ -6,6 +9,7 @@ import Input from "../../components/input-field/input";
 import ToggleButton from "../../components/toggle-button/toggleButton";
 import DialogBox from "../../components/dialog-box";
 import CalenderSection from '../../components/calender-section';
+import GoogleMaps from '../../components/google-maps';
 
 import './styles.css';
 
@@ -25,6 +29,34 @@ const HomePage = (props) => {
   const [selectedOption, setSelectedOption] = useState(toggleOptions[0]?.id)
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState(today);
+  const [mapCenter, setMapCenter] = useState({ lat: 10.0114, lng: 76.3666 });
+  const [directionsResponse, setDirectionsResponse] = useState(null)
+
+  const originRef = useRef()
+  const destiantionRef = useRef()
+
+  useEffect(() => {
+    setDetails({ ...details, startPoint: originRef.current })
+  }, [originRef.current])
+
+  useEffect(() => {
+    setDetails({ ...details, destinationPoint: destiantionRef.current })
+  }, [destiantionRef.current])
+
+  const calculateRoute = async () => {
+    if (originRef.current?.value === '' || destiantionRef.current?.value === '') {
+      return
+    }
+    // eslint-disable-next-line no-undef
+    const directionsService = new google.maps.DirectionsService()
+    const results = await directionsService.route({
+      origin: originRef.current.value,
+      destination: destiantionRef.current.value,
+      // eslint-disable-next-line no-undef
+      travelMode: google.maps.TravelMode.DRIVING,
+    })
+    setDirectionsResponse(results)
+  }
 
   const onSelectDay = (newDay) => {
     setSelectedDay(newDay);
@@ -51,7 +83,11 @@ const HomePage = (props) => {
   };
   return (
     <div class="homepageWrapper">
-      <div class="mapContainer" />
+      <div class="mapContainer">
+        <GoogleMaps 
+        directionsResponse={directionsResponse}
+        />
+      </div>
       {!isCalenderOpen ? (
         <div class="homeFormContainer">
           <div class="toggleButtonWrapper">
@@ -72,20 +108,27 @@ const HomePage = (props) => {
               </div>
             </div>
             <div class="locationInputsWrapper">
+              <Autocomplete>
               <Input
                 placeholder="Pick up Location"
                 type="location"
                 isRightLogo={true}
-                val={details?.startPoint}
+                val={originRef?.current?.value}
                 onChange={(startPoint) => setDetails({ ...details, startPoint })}
+                valueRef={originRef}
               />
+              </Autocomplete>
+              <Autocomplete>
               <Input
                 placeholder="Destination"
                 type="location"
                 isRightLogo={true}
-                val={details?.destinationPoint}
+                val={destiantionRef?.current?.value}
                 onChange={(destinationPoint) => setDetails({ ...details, destinationPoint })}
+                valueRef={destiantionRef}
+                onBlur={calculateRoute}
               />
+              </Autocomplete>
             </div>
           </div>
           <div className="otherInputs">
