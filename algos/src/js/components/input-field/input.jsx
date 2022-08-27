@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from './styles.css';
+import './styles.css';
 
 const Input = (props) => {
-	const { placeholder, type, onChange, isRightLogo = false } = props;
+	const { placeholder, type, onChange, isRightLogo = false, onFocus } = props;
 	const newDate = new Date();
 
 	const formatDate = (date) => {
@@ -39,6 +39,7 @@ const Input = (props) => {
 				value={value}
 				onChange={onValueChange}
 				type={getInputType()}
+        onFocus={onFocus}
 			/>
 			{isRightLogo && type && (
 				<div class={`iconWrapper ${type} rightLogo`} />
