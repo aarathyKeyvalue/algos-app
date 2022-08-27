@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Route,
   Routes as Switch,
@@ -30,7 +30,7 @@ const Layout = (props) => {
         </Router>
       </div>
     </div>
-  )
+  );
 };
 
 export default Layout;
