@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Input from '../../components/input-field';
 import ToggleButton from '../../components/toggle-button/toggleButton';
 import Button from '../../components/button/Button';
@@ -6,6 +7,19 @@ import './styles.css';
 
 const Login = (props) => {
   const { type = 'normal' } = props;
+  const navigate = useNavigate();
+
+  const [values, setValues] = useState({
+  name: '',
+  number: '',
+  password: ''
+});
+  const [errors, setErrors] = useState({
+    name: false,
+    number: false,
+    password: false
+  }); 
+  
   const loginButtons = [
     {
       id: 'signUp',
@@ -15,35 +29,52 @@ const Login = (props) => {
       id: 'signIn',
       name: 'Sign In'
     }
-  ]
+  ];
+
+  const onValueChange = (newValue, type) => {
+    setValues({ ...values, [type]: newValue });
+  };
+
+  const handleCreateButtonClick = () => {
+    let tempErrors= {...errors};
+    Object.keys(values).forEach(key => {
+      if (!values[key]) tempErrors[key] = true;
+      else tempErrors[key] = false;
+    });
+    setErrors(tempErrors);
+    if (!(tempErrors.name || tempErrors.number || tempErrors.password )) navigate(`/verification?number=${values?.number}`); 
+  };
   return (
     <div>
       <div className='loginTypes'>
-        <div>
+        <div class="toggleButtonContainer">
           <ToggleButton
             list={loginButtons}
             selectedVal='signUp'
           />
         </div>
         <div class="inputContainer">
-        <div class="title">Full Name</div>     
+        <div class={`title ${errors.name && 'error'}`}>Full Name</div>     
         <Input
           placeholder="Enter your name"
           type="name"
+          onChange={onValueChange}
         />
         </div>
         <div class="inputContainer">
-        <div class="title">Phone Number</div>     
+        <div class={`title ${errors.number && 'error'}`}>Phone Number</div>     
         <Input
           placeholder="Enter your number"
           type="number"
+          onChange={onValueChange}
         />
         </div>
         <div class="inputContainer">
-        <div class="title">Password</div>     
+        <div class={`title ${errors.password && 'error'}`}>Password</div>     
         <Input
           placeholder="Enter your password"
           type="password"
+          onChange={onValueChange}
         />
         </div>
         <div class="buttonContainer">
@@ -51,6 +82,9 @@ const Login = (props) => {
             type="fill"
             label="Create Account"
             width="100%"
+            handleClick={() => {
+              handleCreateButtonClick()
+            }}
           />
         </div>
       </div>

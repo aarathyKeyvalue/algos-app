@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import RegistrationSuccess from '../../components/registration-success'
 import Button from '../../components/button/Button';
 import SingleNumberInput from '../../components/single-number-input'
 import './styles.css';
 
 const VerificationCode = (props) => {
-  const { phoneNo = '8075797015' } = props;
+  // const { phoneNo = '8075797015' } = props;
   const [code, setCode] = useState(['','','','']);
   const [resentActive, setResentActive] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const url = window.location.hash;
+  const phoneNo = url?.split('#')[1]?.split('/')[1]?.split('?')[1]?.split('=')[1];
 
   // const navigate = useNavigate();
   function countdown(minutes, seconds) {
@@ -51,7 +54,9 @@ const VerificationCode = (props) => {
   return (
     <>
       <div className="verificationWrapper">
-        <div className="backbutton" />
+        <div
+          className="backbutton"
+          />
         <div className="verification">Verification Code</div>
         <div className="subtextContainer">We have sent the code verification to your number {phoneNo}</div>
         <div className="inputFields">
