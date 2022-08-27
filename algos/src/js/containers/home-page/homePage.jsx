@@ -115,19 +115,15 @@ const HomePage = (props) => {
         </div>
       )
         : (
-          <div className="calenderAndButtonWrapper">
-            <div classname="calenderWrapper">
-              <DialogBox
-                success={isCalenderOpen}
-                Component={CalenderSection}
-                componentProps={{
-                  setIsCalenderOpen
-                }}
-                height="502px"
-                setSuccess={setIsCalenderOpen}
-              />
-            </div>
-          </div>
+          <DialogBox
+              success={isCalenderOpen}
+              Component={CalenderSection}
+              componentProps={{
+                setIsCalenderOpen
+              }}
+              height="502px"
+              setSuccess={setIsCalenderOpen}
+            />
         )}
     </div>
   );
