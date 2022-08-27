@@ -1,0 +1,46 @@
+.vehicleinfo{
+ 
+width: 327px;
+height: 52px;
+background: #FFFFFF;
+border: 1px solid #F3F3F3;
+border-radius: 12px;
+
+}
+.weight{
+    width: 327px;
+    height: 52px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 12px;
+    margin-top:16px;
+    margin-left: 24px;
+    }
+.crossimg{
+    background-repeat: no-repeat;
+    height: 12px;
+    position: absolute;
+    width: 12px;
+    top: 20.67px;
+    right: 20.67px;
+    }
+.rowimg{
+     
+    height: fit-content;
+    margin-top: 184px;
+    margin-left: 24px;
+    position: relative;
+    width: fit-content;
+}
+.infovehicle{
+margin-left: 24px;
+margin-top: 14px;
+
+}
+.infovehicle1{
+    margin-left: 24px;
+
+    margin-top: 14px;
+
+
+}

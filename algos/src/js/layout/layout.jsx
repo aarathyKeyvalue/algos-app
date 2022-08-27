@@ -6,11 +6,11 @@ import {
   HashRouter as Router  } from 'react-router-dom';
 import MainContainer from '../containers/login-container/loginContainer';
 import VerificationCode from '../containers/verification-code';
-import HomePage from '../containers/listing-page';
+import HomePage from '../containers/home-page-wrapper';
+import VehicleInfoPage from '../containers/vehicleInfo-page/vehicleInfoPage';
 import './styles.css';
 
-const Layout = (props) => {
-  const { id } = props;
+const Layout = () => {
   return (
     <div class="layoutWrapper">
       <div className='header'>
@@ -28,6 +28,7 @@ const Layout = (props) => {
             <Route path="/login" exact={true} element={<MainContainer />} /> 
             <Route path="/verification" exact={true} element={<VerificationCode />} />
             <Route path="/home" exact={true} element={<HomePage />} />
+            <Route path="/info" exact={true} element={<VehicleInfoPage/>}/>
           </Switch>
         </Router>
       </div>
