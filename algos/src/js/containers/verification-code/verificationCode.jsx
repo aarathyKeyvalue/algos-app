@@ -6,12 +6,16 @@ import SingleNumberInput from '../../components/single-number-input'
 import './styles.css';
 
 const VerificationCode = (props) => {
-  const { phoneNo = '8075797015' } = props;
+  // const { phoneNo = '8075797015' } = props;
   const [code, setCode] = useState(['','','','']);
   const [resentActive, setResentActive] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const navigate = useNavigate();
+  const url = window.location.hash;
+  const phoneNo = url?.split('#')[1]?.split('/')[1]?.split('?')[1]?.split('=')[1];
+
+  // const navigate = useNavigate();
   function countdown(minutes, seconds) {
     // set time for the particular countdown
     let time = minutes*60 + seconds;
