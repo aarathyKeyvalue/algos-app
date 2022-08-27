@@ -15,13 +15,13 @@
 }
 
 .imageContainer {
-    height: 315px;
+    height: 389px;
     position: relative;
 }
 .image {
     background: url('../../../assets/main/successReg.svg');
     width: 375px;
-    height: 100%;
+    height: 424px;
 }
 
 .imageText {

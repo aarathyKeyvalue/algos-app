@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import RegistrationSuccess from '../../components/registration-success'
+import DialogBox from '../../components/dialog-box';
 import Button from '../../components/button/Button';
 import SingleNumberInput from '../../components/single-number-input'
 import './styles.css';
@@ -89,15 +90,11 @@ const VerificationCode = (props) => {
         </div>
       </div>
       <div className={`registrationSuccess`}>
-        {success && (
-        <>
-          <div className={`overlay`} />
-          <div className="dialogWrapper">
-            <dialog className={`dialog showRegistrationSuccess`} open={success}>
-            <RegistrationSuccess success={success}/>
-            </dialog>
-          </div>
-        </>)}
+        <DialogBox
+          success={success}
+          Component={RegistrationSuccess}
+          height="535px"
+        />
       </div>
     </>
   )

@@ -1,7 +1,3 @@
-@keyframes appear {
-    from {height: 0}
-    to {height: 100%}
-  }
 .backbutton {
     background: url('../../../assets/main/back.svg');
     background-size: contain;
@@ -75,41 +71,4 @@
     bottom: 0;
     width: 100%;
     margin-left: -24px;
-}
-
-.showRegistrationSuccess {
-    animation: appear 1.5s ease-in;
-    height: 100%;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    z-index: 4;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-.dialogWrapper{
-    position: absolute;
-    z-index: 11;
-    background-color: #fff;
-    left: 24px;
-    right: 0%;
-    bottom: 0%;
-    height: 459px;
-}
-
-.dialog {
-    height: 547px;
-    width: 375px;
-    left: 0px;
-    top: 0px;
-    border-radius: 0px;
-    background-color: #fff;
-    border-style: none;
-    padding: 0 0 3px;
-    z-index: 12;
-    padding-bottom: 4px;
 }

@@ -1,5 +1,4 @@
 .detailsCard {
-    height: 138px;
     border-radius: 12px;
     box-shadow: 0px 4px 80px 0px #7A7F9C26;
     padding: 12px;
@@ -8,16 +7,29 @@
 .topContainer {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(107, 108, 117, 0.2);
 }
 .basicDetails {
     display: flex;
 }
 
+.bottomContainer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailsButton {
+    width: 114px;
+}
 .profilePic {
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
     width: 44px;
     height: 44px;
+    border-radius: 30px;
 }
 .vehiclePic {
     background-size: contain;
@@ -56,4 +68,36 @@
 .trailer {
     background: url('../../../assets/vehicles/trailer.svg');
     width: 57x;
+}
+
+.detailsContainer {
+    margin-left: 14px;
+}
+.nameText {
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+
+}
+.phoneDetails {
+    display: flex;
+    align-items: center;
+}
+.phoneNumber {
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 6px;
+}
+.phoneImg {
+    background: url('../../../assets/main/phone.svg');
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }

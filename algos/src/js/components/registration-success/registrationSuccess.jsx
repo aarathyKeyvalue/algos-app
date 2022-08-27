@@ -10,12 +10,11 @@ const RegistrationSuccess = () => {
     <div className="wrapper">
       <div className="starter" />
       <div className="imageContainer">
-        <div className="image">
-          <div className="imageText">
-            <div className="mainText">Registered Successfully</div>
-            <div className="subtext">
-            Congratulation! your account has been created. Please login to get amazing experience.
-            </div>
+        <div className="image" />
+        <div className="imageText">
+          <div className="mainText">Registered Successfully</div>
+          <div className="subtext">
+          Congratulation! your account has been created. Please login to get amazing experience.
           </div>
         </div>
       </div>
