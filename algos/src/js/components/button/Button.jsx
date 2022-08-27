@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./styles.css";
 
 const Button = (props) => {
@@ -24,5 +25,21 @@ const Button = (props) => {
       </div>
     </>
   );
+};
+
+Button.propTypes = {
+  label: PropTypes.string,
+  type:  PropTypes.string,
+  handleClick: PropTypes.func,
+  width: PropTypes.string,
+  height: PropTypes.string
+};
+
+Button.defaultProps = {
+  label: '',
+  type: '',
+  handleClick: () => {},
+  width: '100%',
+  height: '54px'
 };
 export default Button;
