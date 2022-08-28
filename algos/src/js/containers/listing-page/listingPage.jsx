@@ -3,13 +3,14 @@ import DetailsCard from "../../components/details-card";
 import LocationDetails from "../../components/location-details";
 import DriverDetails from "../../components/driver-details";
 import DialogBox from '../../components/dialog-box';
-import list from './list.js';
+import getList from "./saga";
 import './styles.css';
 const ListingPage = (props) => {
   const { setStep, details } = props;
   const vehicleTypes = ['Truck', 'Hyva', 'LCV', 'Container', 'Trailer'];
   const [selectedType, setSelectedType] = useState('all');
-  const [displayList, setDisplayList] = useState(list);
+  const [displayList, setDisplayList] = useState([]);
+  const [list, setList] = useState([]);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [personDetails, setPersonDetails] = useState({});
   useEffect(() => {
@@ -19,6 +20,15 @@ const ListingPage = (props) => {
       setDisplayList(listItems);
     }
   }, [selectedType]);
+
+  useEffect(() => {
+    getList({
+      ...details
+    }).then((e) => {
+      setDisplayList(e?.data || []);
+      setList(e?.data || []);
+    });
+  }, []);
   return (
     <div style={{ height: '100%' }}>
       <div className="locationDiv">
@@ -63,7 +73,9 @@ const ListingPage = (props) => {
         <DialogBox
           success={detailsOpen}
           Component={DriverDetails}
-          details={personDetails}
+          componentProps={{
+            id: personDetails?.id
+          }}
           height="700px"
           setSuccess={setDetailsOpen}
         />

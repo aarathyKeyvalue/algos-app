@@ -7,17 +7,17 @@ const VehicleInfoPage = (props) => {
     <div className="vehicleInfoWrapper">
       <div className="headerVehicleInfo">Vehicle Info</div>
       <div className="rowimg">
-        {!details?.vehicleNo && (
+        {!details?.registrationNumber && (
         <div className="withoutVehicleNo">
           <div className="searchIcon" />
           <span className="vehicleNoPlaceholder">Enter your vehicle number</span>
         </div>)}
         <input
           className="vehicleinfo"
-          value={details?.vehicleNo}
-          onChange={(e) => setDetails({ ...details, vehicleNo: e?.target?.value })}
+          value={details?.registrationNumber}
+          onChange={(e) => setDetails({ ...details, registrationNumber: e?.target?.value })}
         />
-        {details?.vehicleNo && (<div className="crossimg" />)}
+        {details?.registrationNumber && (<div className="crossimg" />)}
       </div>
       <div className="rowimg">
         {!details?.weight && (
@@ -28,6 +28,7 @@ const VehicleInfoPage = (props) => {
           value={details?.weight}
           onChange={(e) => setDetails({ ...details, weight: e?.target?.value })}
         />
+        {details?.weight && (<div className="crossimg" />)}
       </div>
       {(!vehicleImg && (
         <div>

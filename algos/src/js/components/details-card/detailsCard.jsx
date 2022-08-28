@@ -5,9 +5,9 @@ import './styles.css';
 const DetailsCard = (props) => {
   const { name,
   type,
-  vehicleNo,
-  phoneNo,
-  pic,
+  phoneNumber,
+  avatar,
+  availableCapacity,
   onDetailsClick } = props;
 
   return (
@@ -15,13 +15,13 @@ const DetailsCard = (props) => {
       <div className="topContainer">
         <div className="basicDetails">
           <div
-            className={`profilePic ${pic}`}
+            className={`profilePic ${avatar}`}
           />
           <div className="detailsContainer">
             <div className="nameText">{name}</div>
             <div className="phoneDetails">
               <div className="phoneImg" />
-              <div className="phoneNumber">{phoneNo}</div>
+              <div className="phoneNumber">{phoneNumber}</div>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@ const DetailsCard = (props) => {
       </div>
       <div className="bottomContainer">
         <div>
-          <div className="phoneNumber">{vehicleNo}</div>
+          <div className="phoneNumber">{availableCapacity} Kg Capacity</div>
           <div className="phoneNumber">{type}</div>
         </div>
         <div className="detailsButton">

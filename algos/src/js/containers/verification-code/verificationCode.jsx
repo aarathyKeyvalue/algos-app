@@ -26,13 +26,16 @@ const VerificationCode = (props) => {
         // if the time is 0 then end the counter
         if(time === 0) {
           setResentActive(true);
+          clearInterval();
         }
         let minutes = Math.floor( time / 60 );
         if (minutes < 10) minutes = "0" + minutes;
         let seconds = time % 60;
         if (seconds < 10) seconds = "0" + seconds; 
         let text = minutes + ':' + seconds;
-        el.innerHTML = text;
+        if (el) {
+          el.innerHTML = text;
+        }
         time--;
       }
     }, 1000);

@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import vehicleMap from "./vehicleMap";
 import Button from "../button/Button";
+import getDriverDetails from './saga';
 import './styles.css';
 
 const DriverDetails = (props) => {
-  const { details } = props;
+  const { id } = props;
+  const [details, setDetails] = useState({});
+
+  useEffect(() => {
+    if (id) {
+      getDriverDetails(id).then((e) => {
+        setDetails(e?.data || {});
+      })
+    }
+  }, [id]);
   return (
     <div className="driverWrapper">
       <div className="driverDetailWrapper">
         <div className="starter" />
         <div className="profilePicContainer">
-          <div className={`profilePic ${details?.pic}`} />
+          <div className={`profilePicBig ${details?.avatar}`} />
           <div className={`vehiclePicContainer ${String(details?.type)?.toLowerCase()}`} />
           <div className='shadow'/>
         </div>
@@ -44,7 +54,7 @@ const DriverDetails = (props) => {
       </div>
       <div>
         <div className="vehiclePicContainerDiv">
-        {vehicleMap[details?.pic]?.map((vehiclePic) => (
+        {vehicleMap[details?.avatar]?.map((vehiclePic) => (
           <div className={`eachVehicleImage ${vehiclePic}`} />
         )) }
         </div>

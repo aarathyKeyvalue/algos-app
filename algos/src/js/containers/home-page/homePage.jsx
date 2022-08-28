@@ -70,7 +70,7 @@ const HomePage = (props) => {
   };
   const formatDateString = (isoDateString) => {
     const date = new Date(isoDateString);
-    const monthString = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date)?.substring(0, 3);
+    const monthString = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date || new Date())?.substring(0, 3);
 		let newDateString = `${date.getDate()}/${monthString}/${date.getFullYear()} `;
 		return newDateString;
   };

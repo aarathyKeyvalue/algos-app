@@ -43,6 +43,7 @@ const DriverInfo = (props) => {
           setVehicleType={setVehicleType}
           setListedSuccess={setListedSuccess}
           setStep={setStep}
+          details={details}
         />
       )}
     </div>

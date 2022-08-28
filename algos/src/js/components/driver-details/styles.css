@@ -15,7 +15,7 @@
     height: 6px;
     background-color: #DFE2EB;
 }
-.profilePic {
+.profilePicBig {
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -84,7 +84,7 @@
 }
 .trailer {
     background: url('../../../assets/vehicles/trailer.svg');
-    width: 57x;
+    width: 57px;
 }
 .vehicleDetails {
     color: #A7A9B7;
