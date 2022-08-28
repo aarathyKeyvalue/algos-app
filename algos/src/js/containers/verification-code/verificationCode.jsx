@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import RegistrationSuccess from '../../components/registration-success'
 import DialogBox from '../../components/dialog-box';
 import Button from '../../components/button/Button';
-import SingleNumberInput from '../../components/single-number-input'
+import SingleNumberInput from '../../components/single-number-input';
+import validateOtp from './saga';
 import './styles.css';
 
 const VerificationCode = (props) => {
@@ -11,6 +12,7 @@ const VerificationCode = (props) => {
   const [code, setCode] = useState(['','','','']);
   const [resentActive, setResentActive] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [errorVal, setErrorVal] = useState(false);
 
   const navigate = useNavigate();
   const url = window.location.hash;
@@ -54,7 +56,16 @@ const VerificationCode = (props) => {
     code.map((e) => {
       if (e === '') error = true;
     })
-    if (!error) setSuccess(true);
+    if (!error) {
+      const otp = code.reduce((a,b) => String(a)+String(b));
+      validateOtp(Number(otp)).then((e) => {
+        if (e) {
+        setSuccess(true)
+      } else {
+        setErrorVal(true);
+        setCode(['', '', '', ''])
+      }})
+    };
   }
   return (
     <>
@@ -69,7 +80,11 @@ const VerificationCode = (props) => {
           {code?.map((field, index) => (
             <SingleNumberInput
             val={field}
-            setVal={(v) => assignCode(v, index)}
+            error={errorVal}
+            setVal={(v) => {
+              assignCode(v, index);
+              setErrorVal(false);
+            }}
           />
           ))}
         </div>

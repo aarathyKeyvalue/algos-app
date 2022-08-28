@@ -18,15 +18,16 @@ export const createRide = async (data) => {
   } = data;
   const response = await fetch('http://localhost:3000/api/rides',{
     method: 'POST',
+    headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
       startPoint,
-    destinationPoint,
-    tripStartDate,
-    weight,
-    userId,
-    vehicleId: id,
-    driverAvailableStartTime,
-    driverAvailableEndTime
+      destinationPoint,
+      tripStartDate,
+      availableCapacity: weight,
+      userId,
+      vehicleId: id,
+      driverAvailableStartTime,
+      driverAvailableEndTime
     })
   });
   return response.json();
@@ -42,6 +43,7 @@ export const enterRiderDetails = async (data) => {
   } = data;
   const response = await fetch('http://localhost:3000/api/vehicles',{
     method: 'POST',
+    headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
       type,
       registrationNumber,

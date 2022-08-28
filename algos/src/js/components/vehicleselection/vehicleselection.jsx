@@ -3,7 +3,7 @@ import Button from "../button/Button";
 import { getTypes, createRide, enterRiderDetails } from "./saga";
 import "./styles.css";
 const Vehicleselection=(props)=>{
-    const { vehicleType, setVehicleType, setListedSuccess, setStep, details } = props;
+    const { vehicleType, setVehicleType, setListedSuccess, setStep, details, setDetails } = props;
     // const vehicleTypes = ['Truck', 'Hyva', 'LCV', 'Container', 'Trailer'];
     const [vehicleTypes, setTypes] = useState([]);
 
@@ -27,7 +27,7 @@ const Vehicleselection=(props)=>{
             avatar
         } = details;
         enterRiderDetails({
-            type,
+            type: vehicleType,
             registrationNumber,
             avatar,
             userId
@@ -38,7 +38,7 @@ const Vehicleselection=(props)=>{
                 tripStartDate,
                 weight,
                 userId,
-                id: e?.data?.id,
+                vehicleId: e?.data?.id,
                 driverAvailableStartTime,
                 driverAvailableEndTime
             }).then(() =>{
@@ -51,10 +51,13 @@ const Vehicleselection=(props)=>{
     <div className="vehicleSelectionWrapper">
         <div className="headerVehicleInfo">Vehicle Type</div>
             <div className="row">
-                {vehicleTypes?.map((type) => (
+                {vehicleTypes?.map((type) => type && (
                 <div
                   className={`backgroundclass ${vehicleType === String(type)?.toLowerCase() && 'selectedVehicleType'}`}
-                  onClick={() => setVehicleType(String(type)?.toLowerCase())}>
+                  onClick={() => {
+                      setVehicleType(String(type)?.toLowerCase());
+                      setDetails({ ...details, type: String(type)?.toLowerCase() });
+                    }}>
                     <div className={`${String(type)?.toLowerCase()}van`} />
                     <div className={`namediv ${vehicleType === String(type)?.toLowerCase() && 'selectedVehiclenameDiv'}`}>
                         {type}

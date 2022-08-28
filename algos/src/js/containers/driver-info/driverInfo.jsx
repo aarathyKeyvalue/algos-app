@@ -34,6 +34,7 @@ const DriverInfo = (props) => {
           licenceImg={licenceImg}
           setVehicleImg={setVehicleImg}
           setLicenceImg={setLicenceImg}
+          setDetailStep={setDetailStep}
           details={details}
           setDetails={setDetails}
         />
@@ -44,6 +45,7 @@ const DriverInfo = (props) => {
           setListedSuccess={setListedSuccess}
           setStep={setStep}
           details={details}
+          setDetails={setDetails}
         />
       )}
     </div>

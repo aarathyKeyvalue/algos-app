@@ -8,7 +8,6 @@ const DialogBox = (props) => {
     success,
     setSuccess,
     height,
-    details,
     componentProps
   } = props
 
@@ -32,7 +31,6 @@ const DialogBox = (props) => {
         >
           <Component
             success={success}
-            details={details}
             {...componentProps}
           />
         </dialog>

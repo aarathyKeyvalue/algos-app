@@ -4,6 +4,7 @@ import Input from '../../components/input-field';
 import SignupButton from '../../components/sign-up-button';
 import ToggleButton from '../../components/toggle-button/toggleButton';
 import Button from '../../components/button/Button';
+import registerUser from './saga';
 import './styles.css';
 import Timer from '../../components/timer';
 const Login = (props) => {
@@ -45,7 +46,16 @@ const Login = (props) => {
       else tempErrors[key] = false;
     });
     setErrors(tempErrors);
-    if (!(tempErrors.name || tempErrors.number || tempErrors.password )) navigate(`/verification?number=${values?.number}`); 
+    if (!(tempErrors.name || tempErrors.number || tempErrors.password )) {
+      const { name, password, number } = values;
+      registerUser({
+        name,
+        password,
+        phoneNumber: number
+      }).then((e) => {
+        navigate(`/verification?number=${values?.number}`);
+      })
+    }
   };
   return (
     <div>

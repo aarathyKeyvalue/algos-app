@@ -32,8 +32,8 @@ const HomePage = (props) => {
   const [mapCenter, setMapCenter] = useState({ lat: 10.0114, lng: 76.3666 });
   const [directionsResponse, setDirectionsResponse] = useState(null)
 
-  const originRef = useRef()
-  const destiantionRef = useRef()
+  const originRef = useRef({ value : details?.startPoint})
+  const destiantionRef = useRef({value : details?.destinationPoint})
 
   const calculateRoute = async () => {
     setDetails({ ...details, startPoint: originRef.current?.value, destinationPoint: destiantionRef.current?.value});
@@ -50,6 +50,13 @@ const HomePage = (props) => {
     });
     setDirectionsResponse(results)
   }
+
+  useEffect(() => {
+    if (!isCalenderOpen) {
+      originRef.current.value = details?.startPoint || '';
+      destiantionRef.current.value = details?.destinationPoint || '';
+    }
+  }, [isCalenderOpen]);
 
   const onSelectDay = (newDay) => {
     setSelectedDay(newDay);
@@ -69,10 +76,13 @@ const HomePage = (props) => {
     if (!error) setStep(2);
   };
   const formatDateString = (isoDateString) => {
-    const date = new Date(isoDateString);
-    const monthString = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date || new Date())?.substring(0, 3);
-		let newDateString = `${date.getDate()}/${monthString}/${date.getFullYear()} `;
-		return newDateString;
+    if (isoDateString) {
+      const date = new Date(isoDateString);
+      const monthString = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date || new Date())?.substring(0, 3);
+      let newDateString = `${date.getDate()}/${monthString}/${date.getFullYear()} `;
+      return newDateString;
+    }
+    return '';
   };
   return (
     <div class="homepageWrapper">
@@ -106,7 +116,7 @@ const HomePage = (props) => {
                 placeholder="Pick up Location"
                 type="location"
                 isRightLogo={true}
-                val={originRef?.current?.value}
+                // val={originRef?.current?.value}
                 onChange={(startPoint) => setDetails({ ...details, startPoint })}
                 valueRef={originRef}
                 onBlur={calculateRoute}
@@ -117,7 +127,7 @@ const HomePage = (props) => {
                 placeholder="Destination"
                 type="location"
                 isRightLogo={true}
-                val={destiantionRef?.current?.value}
+                // val={destiantionRef?.current?.value}
                 onChange={(destinationPoint) => setDetails({ ...details, destinationPoint })}
                 valueRef={destiantionRef}
                 onBlur={calculateRoute}
@@ -156,7 +166,9 @@ const HomePage = (props) => {
                   <div className="dividerLine"/>
                   <div className="timeSelector">
                     <div className="sandClockGray" />
-                    <div className="clockTime">{details?.waitTime + ' ' || '-- '}Mins</div>
+                    <div className="clockTime">
+                      {details?.waitTime ? details?.waitTime + ' ' : '--'}Mins
+                    </div>
                   </div>
                 </div>
               </div>

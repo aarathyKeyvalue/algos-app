@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import Button from "../../components/button/Button";
 const VehicleInfoPage = (props) => {
-  const { details, setDetails, vehicleImg, licenceImg, setVehicleImg, setLicenceImg } = props;
+  const { details, setDetails, setDetailStep, vehicleImg, licenceImg, setVehicleImg, setLicenceImg } = props;
   return (
     <div className="vehicleInfoWrapper">
       <div className="headerVehicleInfo">Vehicle Info</div>
@@ -57,6 +57,7 @@ const VehicleInfoPage = (props) => {
           type="fill"
           label="Continue"
           width="100%"
+          handleClick={() => setDetailStep(2)}
         />
       </div>
     </div>

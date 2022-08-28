@@ -15,27 +15,32 @@ const DriverDetails = (props) => {
       })
     }
   }, [id]);
+
+  const getTimeDiff = () => {
+    const startHour = new Date(details?.driverAvailableStartTime)?.getHours();
+    const startMin = new Date(details?.driverAvailableStartTime)?.getMinutes();
+  }
   return (
     <div className="driverWrapper">
       <div className="driverDetailWrapper">
         <div className="starter" />
         <div className="profilePicContainer">
-          <div className={`profilePicBig ${details?.avatar}`} />
-          <div className={`vehiclePicContainer ${String(details?.type)?.toLowerCase()}`} />
+          <div className={`profilePicBig ${details?.user?.avatar}`} />
+          <div className={`vehiclePicContainer ${String(details?.vehicle?.type)?.toLowerCase()}`} />
           <div className='shadow'/>
         </div>
         <div className="driverNameVal">
-          {details?.name}
+          {details?.user?.name}
         </div>
         <div className="vehicleDetails">
           <span className="eachDetail">
-            {details?.vehicleNo}
+            {details?.vehicle?.registrationNumber}
           </span>
           <span className="eachDetail">
-            {details?.type}
+            {details?.vehicle?.type}
           </span>
           <span className="eachDetail">
-            {details?.brand}
+            {details?.vehicle?.brand}
           </span>
         </div>
         <div className="timeAndDate">
@@ -48,13 +53,20 @@ const DriverDetails = (props) => {
             <div className="timeDiffOrDate">27 August 2022</div>
           </div>
         </div>
-        <div className="phoneDiv">
-          {details?.phoneNo}
+        <div className="phoneWithWeight">
+          <div className="phoneDiv">
+            <div className="phoneImageIcon"/>
+            {details?.user?.phoneNumber}
+          </div>
+          <div className="weightDiv">
+            <div className='boxWeightDiv'/>
+            {details?.availableCapacity} Kg Capacity
+          </div>
         </div>
       </div>
       <div>
         <div className="vehiclePicContainerDiv">
-        {vehicleMap[details?.avatar]?.map((vehiclePic) => (
+        {vehicleMap[details?.user?.avatar]?.map((vehiclePic) => (
           <div className={`eachVehicleImage ${vehiclePic}`} />
         )) }
         </div>

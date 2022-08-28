@@ -42,6 +42,8 @@ const ListingPage = (props) => {
         <span className="headerText">Available Partners</span>
         <span className="partnerCount">{displayList?.length || 0}</span>
       </div>
+      {(list?.length > 0 && (
+      <>
       <div className="buttonGroup">
         <div
           className={`eachButton ${(selectedType === 'all' && 'buttonSelected') || 'buttonUnselected'}`}
@@ -69,6 +71,13 @@ const ListingPage = (props) => {
           />
         ))}
       </div>
+      </>
+      )) || (
+        <div className="noItem">
+          No cargo space available
+        </div>
+      )}
+      
       <div className={`registrationSuccess`}>
         <DialogBox
           success={detailsOpen}

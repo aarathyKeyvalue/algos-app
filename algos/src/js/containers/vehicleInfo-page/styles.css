@@ -4,6 +4,8 @@
     border: 1px solid #F3F3F3;
     border-radius: 12px;
     width: 100%;
+    padding: 14px;
+    z-index: 10;
 }
 .vehicleInfoWrapper {
     margin: 16px 24px;
@@ -20,6 +22,8 @@
     background: #FFFFFF;
     border: 1px solid #F3F3F3;
     border-radius: 12px;
+    padding: 14px;
+    z-index: 10;
 }
 .crossimg{
     background: url('../../../assets/vehicles/Vector.svg');
@@ -36,6 +40,7 @@
     left: 14px;
     display: flex;
     align-items: center;
+    z-index: 0;
 }
 .searchIcon {
     background: url('../../../assets/main/searchVehicle.svg');
@@ -47,6 +52,7 @@
 .vehicleNoPlaceholder {
     font-size: 14px;
     color: #6B6C75;
+    z-index: 0;
 }
 .rowimg{
     height: fit-content;
@@ -58,6 +64,7 @@
     position: absolute;
     top: 14px;
     left: 20px;
+    z-index: 0;
 }
 .infovehicle{
     width: 100%;

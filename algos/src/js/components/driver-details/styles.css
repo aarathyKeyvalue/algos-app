@@ -126,11 +126,45 @@
     font-weight: 500;
     line-height: 22px;
 }
-
 .phoneDiv {
+    padding-right: 10px;
+    border-right: 1px solid #6B6C75;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-right: 10px;
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #6B6C75;
+}
+.weightDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #6B6C75;
+}
+.boxWeightDiv {
+    background: url('../../../assets/main/box.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+.phoneWithWeight {
     height: 55px;
     display: flex;
     width: 100%;
+    align-items: center;
+    justify-content: center;
     align-items: center;
     justify-content: center;
     border-bottom: 1.5px solid #F3F3F3;
@@ -167,6 +201,14 @@
     width: 100%;
 }
 
+.phoneImageIcon {
+    background-image: url('../../../assets/main/phone.svg');
+    width: 12px;
+    height: 12px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
 .backButton {
     margin-top: 15px;
     width: 100%;

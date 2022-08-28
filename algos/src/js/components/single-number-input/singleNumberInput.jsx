@@ -2,7 +2,7 @@ import React from "react";
 import './styles.css';
 
 const SingleNumberInput = (props) => {
-  const { val, setVal } = props;
+  const { val, setVal, error } = props;
 
   return (
     <div className="wrapperVal">
@@ -11,7 +11,7 @@ const SingleNumberInput = (props) => {
         maxLength={1}
         value={val}
         onChange={(e) => setVal(e?.target?.value)}
-        className="singleInput" />
+        className={`singleInput ${error && 'error'}`} />
     </div>
   )
 }

@@ -5,7 +5,7 @@ const Input = (props) => {
 	const {
 		placeholder,
 		type,
-		onChange,
+		onChange = () => {},
 		isRightLogo = false,
 		onFocus,
 		val,
@@ -18,9 +18,6 @@ const Input = (props) => {
 		setValue(val);
 	}, [val]);
 
-	useEffect(() => {
-		if (valueRef?.current?.value) onChange(valueRef?.current?.value);
-	}, [valueRef?.current?.value]);
 	const [value, setValue] = useState(val);
 	const onValueChange = (e) => {
 		// if (type !== 'date') setValue(e.target.value);

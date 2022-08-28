@@ -64,6 +64,14 @@
     overflow-y: auto;
 }
 
+.noItem {
+    width: 100%;
+    height: 86%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+}
 .locationDiv {
     display: flex;
     padding: 20px 24px;
